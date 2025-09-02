@@ -1,0 +1,41 @@
+@use './typography' as *;
+
+.page-solutions {
+  background:var(--carbon);
+  color:white;
+}
+
+.our-solutions {
+  padding-bottom:10rem;
+}
+
+.solution {
+  width:100%;
+  padding-top:4.5rem;
+  padding-bottom:4.5rem;
+  border-bottom:1px solid white;
+
+  .solution-title {
+    @extend %font-primary;
+    font-weight: 500;
+    font-size:2.5rem;
+    line-height: 1.2;
+    margin-bottom:0.82rem;
+    
+    @media screen and (min-width:768px) {
+      max-width:38rem;
+      font-size:3.5rem;
+    }
+  }
+
+  .solution-text {
+    display:flex;
+    flex-direction: column;
+    gap:2.5rem;
+    align-items: flex-start;
+
+    @media screen and (min-width:768px) {
+      max-width:35rem;
+    }
+  }
+}

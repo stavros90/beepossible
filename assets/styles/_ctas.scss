@@ -1,0 +1,60 @@
+.cta {
+  text-decoration: none;
+  font-family: inherit;
+  cursor: pointer;
+  font-size:1rem;
+  line-height: 1rem;
+  font-style: normal;
+  font-weight: 300;
+  margin:1rem 0;
+  display: inline-flex;
+  padding:0.9rem 3rem;
+  border-radius: 3.75rem;
+
+  &-white {
+    color:var(--carbon, #131313);
+    background:var(--white-smoke);  
+    border:1px solid var(--white-smoke);
+    text-align: center;
+  }
+
+  &-primary {
+    color:var(--carbon, #131313);
+    background:var(--primary);  
+    border:1px solid var(--primary);
+    text-align: center;
+  }
+  &-secondary {
+    color:var(--primary);
+    border:1px solid var(--primary);
+    text-align: center;
+    background:transparent;
+    position:relative;
+    overflow: hidden;
+
+    &::after {
+      content:attr(name);
+      position:absolute;
+      top:0;
+      left:-100%;
+      width:100%;
+      border-radius: 3.75rem;
+      background:var(--primary);
+      color:var(--carbon);
+      z-index: 1;
+      padding:0.9rem 0;
+      transition: all .2s ease-in;
+    }
+
+    &:hover::after{
+      left:0;
+    }
+  }
+}
+
+.cta-centered {
+  display:flex;
+  width:100%;
+  justify-content: center;
+  align-items: center;
+}

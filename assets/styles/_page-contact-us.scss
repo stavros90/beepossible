@@ -1,0 +1,43 @@
+.page-contact {
+  background:var(--white-smoke);
+  padding-bottom:4rem;
+}
+
+.contact-container {
+  display:flex;
+  flex-direction: column;
+  gap:3rem;
+
+  @media screen and (min-width:768px) {
+    flex-direction: row;
+    gap:5rem;
+
+    .contact__form, .contact__details{
+      width:50%;
+      margin-bottom:2rem;
+    }
+  }
+  
+}
+
+address a {
+  color:var(--carbon);
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.contact-map {
+  margin-top:2rem;
+  width: 100%;
+  max-width:100%;
+  height:auto;
+  min-height:500px;
+  border-radius:1.5rem;
+  display:none;
+
+  @media screen and (min-width:768px) {
+    display:block;
+  }
+}

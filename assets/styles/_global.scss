@@ -1,0 +1,152 @@
+@use './fonts';
+@use './typography';
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: url('http://beepossible.local/wp-content/themes/beepossible/assets/images/svg/cursor.svg') 8 8, auto;
+}
+
+a:hover, button:hover, .hover-target:hover {
+   cursor: pointer;
+}
+  
+
+:root {
+    --primary:#FFC300;
+    --carbon: #131313;
+    --gray1:#333333;
+    --gray2:#4A4A4A;
+    --gray3:#B0B0B0;
+    --white-smoke:#F5F5F5;   
+}
+
+html, body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    @extend %font-primary;
+    font-optical-sizing: auto;
+    background:var(--white-smoke);
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary) var(--carbon);
+
+    &::selection {
+        color: var(--carbon);
+        background-color: var(--primary);
+    }
+      
+}
+
+.container {
+    width:100%;
+    max-width:1128px;
+    max-width:1028px;
+    margin:0 auto;
+    padding-left:0.95rem;
+    padding-right:0.95rem;
+    position:relative;
+
+    @media screen and (min-width:768px) {
+        padding-left:1.5rem;
+        padding-right:1.5rem;
+    }
+
+    @media screen and (min-width:1330px) {
+        padding-left:0;
+        padding-right:0;
+    }
+
+    &__large {
+        max-width:1280px;
+    }
+
+    &__small {
+        max-width:800px;
+    }
+}
+
+
+.container-fluid {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    padding:0.95rem;
+
+    @media screen and (min-width:768px) {
+        padding:1.5rem;
+    }
+}
+
+section {
+    position:relative;
+}
+
+.font-display {
+    position: relative;
+    display:block;
+    @extend %font-display;
+    font-size:4.6rem;
+    line-height: 51.57%;
+    text-align: center;
+    margin-bottom:3rem;
+    color:var(--carbon);
+
+    span {
+        @extend %font-display;
+        display:block;
+        color:var(--primary);
+    }
+
+    &__alt {
+        color:var(--white-smoke);
+    }
+
+    @media screen and (min-width:568px) {
+        font-size:8rem;
+    }
+    @media screen and (min-width:768px) {
+        font-size:12rem;
+        margin-bottom:5.6rem;
+    }
+    @media screen and (min-width:1024px) {
+        font-size:16rem;
+    }
+    @media screen and (min-width:1400x) {
+        font-size:19rem;
+    }
+}
+
+.page-content {
+    padding-bottom:4rem;
+
+    @media screen and (min-width:1024px) {
+        padding-bottom:5rem;
+        padding-top:2rem;
+    }
+
+    p {
+        @extend %font-primary;
+        font-weight: 500;
+        font-size:1.3rem;
+        line-height: 150%;
+        margin-bottom:1rem;
+
+        @media screen and (min-width:768px) {
+            font-size:1.8rem;
+        }
+    }
+}
+
+nav.rank-math-breadcrumb {
+   a {
+    color:var(--carbon);
+    text-decoration: none;
+    opacity: 0.7;
+   }
+
+   a:hover {
+    opacity:1;
+    text-decoration: underline;
+   }
+}

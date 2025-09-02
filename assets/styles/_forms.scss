@@ -1,0 +1,85 @@
+@use './typography' as *;
+
+form#contactUs, form#careersForm, form#startHere {
+  width:100%;
+  max-width:32rem;
+  margin-bottom:4rem;
+
+  label.screen-readers-only {
+    opacity:0;
+    visibility: hidden;
+    height:1px;
+    display:block;
+  }
+
+  label#cv {
+    opacity:1;
+    visibility: visible;
+    height:auto;
+    font-size:1rem;
+    font-weight: 600;
+  }
+
+  input, select, textarea {
+    width:100%;
+    border:none;
+    border-bottom:2px solid var(--gray3);
+    padding:.75rem .25rem;
+    margin-bottom:2rem;
+    background:transparent;
+    font-size: 1rem;
+
+    &:focus, &:focus-visible, &:focus-within {
+      border-bottom:2px solid var(--primary);
+      outline:none;
+    }
+  }
+
+  input[type=submit] {
+    padding:1rem;
+    border-bottom:none;
+    background:var(--primary);
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    @extend %font-primary;
+    color: var(--gray2); 
+    opacity: 1;
+    font-size: 1rem;    
+    font-weight: 500;
+    font-style: normal;
+  }
+
+  input[type=text], input[type=email], input[type=tel], textarea {
+    &:focus, &:focus-visible, &:focus-within {
+      &::placeholder {
+        color:var(--gray3);
+      }
+    }
+  }
+
+  .timeline-options {
+    display: flex;
+    gap: 1rem;
+    margin-bottom:2rem;
+  }
+
+  .timeline-options input[type="radio"] {
+    display: none;
+  }
+
+  .timeline-options label {
+    padding: 0.5rem 1rem;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .timeline-options input[type="radio"]:checked + label {
+    background: white;
+    color: var(--carbon);
+    border-color: var(--primary);
+  }
+}

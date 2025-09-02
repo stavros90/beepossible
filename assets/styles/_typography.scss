@@ -1,0 +1,30 @@
+// Typography placeholders
+%font-primary {
+  font-family: 'Manrope', sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  font-style: normal;
+}
+
+%font-display {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-transform: uppercase;
+  letter-spacing: 0;
+}
+
+%font-geologica {
+  font-family: 'Geologica', sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+// Utilities
+.font-display { @extend %font-display; }
+.font-primary { @extend %font-primary; }
+.font-geologica { @extend %font-geologica; }
+.text-bold { font-weight: 700; }
+.text-uppercase { text-transform: uppercase; }
+.text-capitalize { text-transform: capitalize; }

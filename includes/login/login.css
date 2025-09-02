@@ -1,0 +1,62 @@
+/* Customize Login Page */
+#login h1 a {
+    background-image: url('./logo.svg');
+    width:194px;
+    height:40px;
+    background-size: 195px;
+}
+
+a {
+    color: #111111;
+    font-weight: bold;
+}
+
+body.login {
+    background:#ffc300;
+}
+
+.login form{
+    box-shadow:none;
+    padding:15px;
+    border-radius: 4px;
+}
+#login {
+    background: #ffc300;
+    color:#111111;
+    margin: 50px auto;
+    padding: 10px;
+    width: 300px;
+}
+.login label {
+    color: #555;
+    font-size: 14px;
+}
+.login form .forgetmenot{
+    float:none;
+}
+
+input#wp-submit {
+    background:#dcdcdc;
+    border-color:#dcdcdc;
+    box-shadow:0 1px 0 #dcdcdc;
+    color:#111111;
+    text-shadow:0 -1px 1px #dcdcdc;
+}
+
+.login #backtoblog a, .login #nav a {
+    color:#ffc300;
+}
+.login #backtoblog a:hover, .login #nav a:hover, .login h1 a:hover {
+    color:#184649;
+}
+
+.login #login_error a {
+    color:#184649;
+}
+.login #login_error {
+    border-left-color: #800000;
+}
+
+.login #login_error, .login .message, .login .success {
+    border-left: 5px solid #800000;
+}

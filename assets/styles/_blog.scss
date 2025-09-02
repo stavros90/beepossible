@@ -1,0 +1,137 @@
+.page-blog {
+  background:var(--carbon);
+  color:white;
+}
+
+.blog-container {
+  border-top:1px solid white;
+}
+
+article.article-list {
+  display:flex;
+  flex-direction: column;
+  gap:1.5rem;
+  padding-top:3.75rem;
+  padding-bottom:3.75rem;
+  border-bottom:1px solid white;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  .article__text {
+
+    h2,p,ul {
+      max-width:40rem;
+    }
+
+    .article-title {
+      font-size:2.5rem;
+      font-weight: 500;
+      line-height: 1.1;
+      margin-bottom:1.5rem;
+      position: relative;
+
+      a {
+        color:var(--white-smoke);
+        text-decoration: none;
+
+        &:hover {
+          color:white;
+        }
+      }
+    }
+    .article-excerpt {
+      font-size:1.375rem;
+      font-weight: 400;
+      line-height: 1.3;
+    }
+  }
+
+  .article__image {
+    border:none;
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    background:none!important;
+
+    .article-img {
+      width:100%;
+      max-width:100%;
+      border-radius: 1.25rem;
+      margin:0;
+      padding:0;
+      box-sizing: border-box;
+      aspect-ratio: 5/4;
+    }
+  }
+
+
+  @media screen and (min-width:768px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap:4rem;
+
+    .article__text {
+      flex:2;
+    }
+
+    .article__image {
+      order:2;
+      flex:1;
+      background:var(--gray2);
+      border-radius: 1.25rem;
+      width:100%;
+      max-width:100%;
+    }
+  }
+}
+
+ul.post-categories {
+  padding:0;
+  list-style: none;
+  display:flex;
+  align-items: flex-start;
+  gap:1.5rem;
+  margin-bottom:1.5rem;
+
+  li {
+    padding:0;
+    a {
+      padding:0.63rem 1.38rem;
+      border-radius: 1.32rem;
+      border:1px solid white;
+      color:white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-weight: 400;
+      font-size:0.875rem;
+    }
+  }
+}
+
+.pagination {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap:.3rem;
+
+  span.page-numbers, a.page-numbers {
+    display:inline-flex;
+    padding:.2rem .75rem;
+    background:white;
+    border:1px solid var(--gray3);
+    border-radius: 5px;
+    font-family: inherit;
+    font-size:.9rem;
+    font-weight: 500;
+    color:var(--carbon);
+    text-decoration: none;
+
+    &.current {
+      background:var(--primary);
+      border:1px solid var(--gray3);
+    }
+  }
+}

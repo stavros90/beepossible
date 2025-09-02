@@ -1,0 +1,62 @@
+.our-people {
+
+  .our-people-title {
+    font-size:4.625rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom:1.5rem;
+  }
+}
+
+.people-swiper {
+  padding: 2rem 0;
+}
+
+.person-card {
+  position: relative;
+  width:400px;
+  height:500px;
+  background:var(--carbon);
+  border-radius:1rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+  align-items: flex-start; 
+  padding: 2rem;
+  color: #fff; 
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right:0;
+    bottom:0;
+    width:100%;
+    height:100%;
+    background-blend-mode: color;
+    background-position: center center;
+    background-size: cover;
+    aspect-ratio: 800/1000;
+    z-index: 1;
+  }
+
+  &__name,
+  &__role {
+    position: relative; // Ensure text appears above the video
+    z-index: 2; // Place text above the video
+    margin: 0.25rem 0; // Add some vertical spacing
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8); // Improve readability
+  }
+
+  &__name {
+    font-size: 2rem;
+    line-height: 1;
+    font-weight: bold;
+  }
+
+  &__role {
+    font-size: 1.1rem;
+    font-weight: normal;
+  }
+}

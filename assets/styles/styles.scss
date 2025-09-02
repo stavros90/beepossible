@@ -1,0 +1,27 @@
+/*!
+Theme Name: BeePossible
+Author: BeePossible
+Author URI: https://beepossible.com/
+Description: We help businesses thrive by understanding what makes them great—and then building smart, tailored strategies that turn potential into progress.
+Version: 1.0.1
+Text Domain: beepossible
+*/
+
+@use './global';
+@use './header';
+@use './footer';
+@use './ctas';
+@use './front-page';
+@use './page-services';
+@use './page-solutions';
+@use './page-about-us';
+@use './page-contact-us';
+@use './blog';
+@use './partials';
+@use './single';
+@use './single-project';
+@use './forms';
+@use './careers';
+@use './projects';
+@use './scroll-progress';
+@use './vendors/aos';

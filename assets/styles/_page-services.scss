@@ -1,0 +1,76 @@
+@use './typography' as *;
+
+.page-services {
+  background:var(--carbon);
+  color:white;
+}
+
+.our-services {
+  padding-bottom:10rem;
+}
+
+.service {
+  width:100%;
+  padding-top:4.5rem;
+  padding-bottom:4.5rem;
+  border-bottom:1px solid white;
+
+  .service-title {
+    @extend %font-primary;
+    font-weight: 500;
+    font-size:3.5rem;
+    line-height: 4rem;
+    margin-bottom:0.82rem;
+  }
+  .service-text {
+    display:flex;
+    flex-direction: column;
+    gap:2.5rem;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    @media screen and (min-width:768px) {
+      flex-direction: row;
+      gap:3rem;
+    }
+
+    p {
+      flex:1;
+    }
+
+    ul {
+      flex:1;
+      display: flex;
+      gap:0.85rem;
+      flex-direction: row;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      list-style: none;
+
+      li {
+        padding:0.6rem 1.4rem;
+        border:1px solid white;
+        border-radius:1.32rem;
+        color:white;
+        font-size: 0.875rem;
+        font-weight: 400;
+
+        &:hover {
+          color:var(--primary);
+          border-color: var(--primary);
+        }
+      }
+      
+      /* Media querie for UL */
+      @media screen and (min-width:768px) {
+        gap:1rem;
+        align-items: flex-end;
+        justify-content: flex-end;
+      }
+      @media screen and (min-width:1024px) {
+        gap:1.5rem;
+      }
+    }
+  }
+}
