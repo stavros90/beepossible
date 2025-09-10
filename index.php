@@ -9,8 +9,9 @@
 
   <section class="container dark-section">
 
+    <div class="the-content">
       <?php the_content(); ?>
-
+    </div>
   </section>
 
   <?php endwhile; endif; ?>

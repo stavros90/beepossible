@@ -28,7 +28,7 @@
     </div>
     <div class="container-fluid">
 
-      <div class="swiper people-swiper">
+      <div class="swiper people-swiper dark-section">
         <div class="swiper-wrapper">
 
         <?php 

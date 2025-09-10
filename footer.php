@@ -29,6 +29,8 @@
                   info@beepossible.com
                   <br>
                   +357 22 388858
+                  <br>
+                  <a class="privacy-link" href="<?php echo esc_url(site_url('privacy-policy/')); ?>">Privacy Policy</a>
               </p>
               <p class="footer-text lg-text-r">
                 <address>
