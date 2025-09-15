@@ -42,7 +42,7 @@
     </div>
     <div class="contact__details">
       <h2>Email us</h2>
-      <p>info@beepossible.com</p>
+      <p><?php echo do_shortcode('[email]info@beepossible.com[/email]'); ?></p>
 
       <h2>Call us</h2>
       <p>+357 22 041145</p>

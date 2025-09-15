@@ -26,7 +26,7 @@
           <div class="footer-top__col">
             <div class="footer-title lg-text-r">Let's connect</div>
               <p class="footer-text lg-text-r">
-                  info@beepossible.com
+                  <?php echo do_shortcode('[email]info@beepossible.com[/email]'); ?>
                   <br>
                   +357 22 388858
                   <br>
