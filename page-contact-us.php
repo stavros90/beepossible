@@ -33,8 +33,12 @@
         <label class="screen-readers-only" for="MESSAGE">Tell us about your ideas</label>
         <textarea rows="4" id="MESSAGE" name="MESSAGE" placeholder="Tell us about your ideas" required></textarea>
 
+        <div class="h-captcha" data-sitekey="68e83946-efae-4068-a37c-3a44401a1bfa"></div>
+        <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+
         <input type="submit" value="Send Message" class="cta cta-primary">
       </form>
+
     </div>
     <div class="contact__details">
       <h2>Email us</h2>

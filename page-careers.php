@@ -55,6 +55,9 @@
       <label class="screen-readers-only" id="cv" for="CV">Upload your CV (PDF Only)</label>
       <input type="file" name="CV" id="CV" accept="application/pdf">
 
+      <div class="h-captcha" data-sitekey="68e83946-efae-4068-a37c-3a44401a1bfa"></div>
+      <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+
       <input class="cta cta-primary" type="submit" value="Apply">
     </form>
   </section>

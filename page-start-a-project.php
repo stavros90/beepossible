@@ -58,6 +58,9 @@
           <label for="timeline-3">3+ months</label>
         </div>
 
+        <div class="h-captcha" data-sitekey="68e83946-efae-4068-a37c-3a44401a1bfa"></div>
+        <script src="https://js.hcaptcha.com/1/api.js" async defer></script>
+        
         <input type="submit" value="Start the Conversation" class="cta cta-primary">
 
         <p>We review every inquiry carefully. Someone from our team will be in touch within 2–3 business days.</p>
