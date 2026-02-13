@@ -1,15 +1,33 @@
 .available-positions {
   margin-top:4rem;
-  margin-bottom:4rem;
-  border-bottom:1px solid #B0B0B0;
+  margin-bottom:8rem;
+//  border-bottom:1px solid #B0B0B0;
+
+  ul {
+    padding-left:1.5rem;
+  }
 }
 
 .job-post {
   margin-bottom:3rem;
 
+
+
   h3.job-title {
     font-size:1.5rem;
     margin-bottom:1.5rem;
+
+    a {
+      text-decoration: none;
+      color:var(--primary-color);
+      transition: color 0.3s ease;
+      opacity:.85;
+
+      &:hover {
+        opacity:1;
+        text-decoration: underline;
+      }
+    }
   }
   p.job-description {
     font-size:1rem;
