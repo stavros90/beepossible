@@ -33,11 +33,10 @@
                   <a class="privacy-link" href="<?php echo esc_url(site_url('privacy-policy/')); ?>">Privacy Policy</a>
               </p>
               <p class="footer-text lg-text-r">
-                <address>
-                  Stasikratous 32, 
-                  <br>Charalambous Tower, Floor M,
-                  <br>Offices M1-2, Λευκωσία
-                  <br>1065
+                <address>Themistokli Dervi 42,
+                  <br>Nice Dream Building,
+                  <br>Nicosia
+                  <br>1066
                 </address>
               </p>
           </div>
@@ -47,7 +46,7 @@
             <div class="copyrights">
               <?php get_template_part('/assets/images/svg/logo'); ?>
               <p class="copyright">
-                <a href="<?php echo esc_url(site_url('sitemap_index.xml/')); ?>">Sitemap</a> All rights reserved &copy; <?php echo date('Y'); ?> Bee Possible Ltd.
+                <a href="<?php echo esc_url(site_url('sitemap_index.xml/')); ?>" target="_blank">Sitemap</a> All rights reserved &copy; <?php echo date('Y'); ?> Bee Possible Ltd.
               </p>
             </div>
           </div>

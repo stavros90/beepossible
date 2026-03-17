@@ -49,10 +49,10 @@
 
       <h2>Find us</h2>
       <p>
-        <address><a href="<?php echo esc_url('https://maps.app.goo.gl/wBNB8J44f56N8PFw7');?>" target="_blank" rel="noopener">Stasikratous 32, Charalambous Tower, Floor M, Offices M1-2, Nicosia 1065</a></address>
+        <address><a href="<?php echo esc_url('https://maps.app.goo.gl/wBNB8J44f56N8PFw7');?>" target="_blank" rel="noopener">Themistokli Dervi 42, 'Nice Dream Building', Nicosia, 1066</a></address>
       </p>
 
-      <iframe title="Our Location on the Map" class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.6582486310485!2d33.35995717634532!3d35.16514295815063!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4eee7667ef895c87%3A0xd9ed0f5b79a2f27a!2sBee%20Possible!5e0!3m2!1sen!2s!4v1756556116023!5m2!1sen!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe title="Our Location on the Map" class="contact-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.709306145381!2d33.35601367634535!3d35.16386985821957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4eee7667ef895c87%3A0xd9ed0f5b79a2f27a!2sBee%20Possible!5e0!3m2!1sen!2spt!4v1773747332837!5m2!1sen!2spt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
 
