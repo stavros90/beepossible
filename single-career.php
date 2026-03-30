@@ -27,7 +27,7 @@
                 <input type="email" name="EMAIL" id="EMAIL" placeholder="Email" required>
 
                 <label class="screen-readers-only" for="PHONE">Phone Number</label>
-                <input type="TEL" name="PHONE" id="PHONE" placeholder="Phone Number (optional)">
+                <input type="TEL" name="PHONE" id="PHONE" placeholder="Phone Number" required>
 
                 <label class="screen-readers-only" for="POSITION">Position applying for</label>
                 <input type="hidden" name="POSITION" id="POSITION" placeholder="Position applying for" value="<?php the_title(); ?>" required>
