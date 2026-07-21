@@ -23,6 +23,10 @@ function beepossible_post_types() {
 		'supports'              => array( 'title', 'editor' ),
 		'hierarchical'          => false,
 		'public'                => true,
+		'rewrite' => [
+			'slug' => 'careers',
+			'with_front' => false,
+    ],
 		'show_ui'               => true,
 		'show_in_menu'          => true,
 		'menu_position'         => 5,
@@ -36,7 +40,6 @@ function beepossible_post_types() {
 		'capability_type'       => 'post',
 	);
 	register_post_type( 'career', $args );
-
 	
 	// Case Study - Portfolio Post Type
 	$args = array(

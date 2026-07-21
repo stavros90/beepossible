@@ -47,6 +47,8 @@
     </div>
   </section>
 
+  <?php get_template_part('/partials/why-choose'); ?>
+
 </main>
 
 <script>
