@@ -54,18 +54,26 @@
         $projectDesc = get_field('project_description');
         $delivered = get_field('what_we_delivered');
         $projectRequests = get_field('what_client_requested');
-        $impact = get_field('measurable_impact'); 
+        $impact = get_field('measurable_impact');
+        $customerReview = get_field('customer_review');
       ?>
       <h3 class="secondary-title"><?php echo $extraTitle; ?></h3>
       <div class="project-desc"><?php echo $projectDesc; ?></div>
 
       <?php if($projectRequests) : ?>
-        <h3 class="case-study-title">What did our client Requested </h3>
+        <h3 class="case-study-title">What did our client Requested</h3>
         <div class="project-desc"><?php echo $projectRequests; ?></div>
       <?php endif; ?>
 
       <h3 class="case-study-title">What we Delivered</h3>
       <div class="project-desc"><?php echo $delivered; ?></div>
+
+      <?php if($customerReview) : ?>
+        <h3 class="case-study-title">In the client's words</h3>
+        <blockquote class="customer-review" data-aos="fade-up">
+          <?php echo wpautop( wp_kses_post( $customerReview ) ); ?>
+        </blockquote>
+      <?php endif; ?>
     </div>
 
     <?php
@@ -107,6 +115,35 @@
       </div>
     </div>
 
+    <?php endif; ?>
+
+    <?php
+    $eventGallery = get_field('event_gallery');
+
+    if( $eventGallery ) : ?>
+    <div class="container container__large">
+      <div class="event-gallery" data-lightbox-group="event-gallery">
+        <?php foreach( $eventGallery as $index => $image ) :
+
+          $full_url  = is_array($image) ? $image['url'] : $image;
+          $thumb_url = is_array($image) ? ( $image['sizes']['large'] ?? $image['url'] ) : $image;
+          $img_alt   = is_array($image) ? $image['alt'] : '';
+          ?>
+
+          <a
+            href="<?php echo esc_url($full_url); ?>"
+            class="event-gallery__item"
+            data-lightbox="event-gallery"
+            data-caption="<?php echo esc_attr($img_alt); ?>"
+            data-aos="zoom-in"
+            data-aos-delay="<?php echo esc_attr( ($index % 3) * 100 ); ?>"
+          >
+            <img src="<?php echo esc_url($thumb_url); ?>" alt="<?php echo esc_attr($img_alt); ?>" loading="lazy">
+          </a>
+
+        <?php endforeach; ?>
+      </div>
+    </div>
     <?php endif; ?>
 
     <?php if($impact) : ?>
