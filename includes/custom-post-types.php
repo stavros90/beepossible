@@ -169,3 +169,32 @@ function beepossible_post_types() {
 }
 
 add_action( 'init', 'beepossible_post_types', 0 );
+
+
+/**
+ * Let real pages live under /careers/ alongside the career post type.
+ *
+ * The career CPT rewrites to 'careers', which registers
+ * careers/([^/]+)/?$ -> post_type=career&name=... ABOVE WordPress's generic
+ * page rule. Any child page of /careers/ is therefore looked up as a job
+ * opening, found missing, and served as a 404 — flushing permalinks just
+ * rebuilds the same conflict.
+ *
+ * Each slug listed here gets its own rule at the top of the stack, so it
+ * resolves to the page while every other /careers/<slug> still belongs to the
+ * post type. Add a slug here when you add a child page under Careers, then
+ * save permalinks once to flush.
+ */
+function beepossible_careers_child_pages() {
+	$slugs = [ 'thank-you' ];
+
+	foreach ( $slugs as $slug ) {
+		add_rewrite_rule(
+			'^careers/' . $slug . '/?$',
+			'index.php?pagename=careers/' . $slug,
+			'top'
+		);
+	}
+}
+
+add_action( 'init', 'beepossible_careers_child_pages' );

@@ -1,0 +1,13 @@
+/* ==========================================================================
+   CAMPAIGN: WEBSITES
+   campaigns/websites/index.php
+
+   Overrides only. Every section on this page comes from a shared part, so if
+   this file is empty the page is built entirely from the kit — which is the
+   goal. Scope anything you add to .campaign--websites so it cannot reach
+   another campaign:
+
+     .campaign--websites {
+       .campaign-hero__title { … }
+     }
+   ========================================================================== */

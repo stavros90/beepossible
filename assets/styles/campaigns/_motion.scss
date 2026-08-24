@@ -1,0 +1,35 @@
+/* ==========================================================================
+   MOTION PREFERENCES
+
+   Loaded last so it wins over any part. Campaign pages lean on movement — the
+   scrolling screenshot, AOS, the sticky bar — and all of it is decoration, so
+   all of it goes when the visitor has asked for less.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .campaign {
+    [data-aos] {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+
+    .campaign-browser__shot,
+    .campaign-work__plate img {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+    }
+
+    .cta,
+    .campaign-whatsapp,
+    .campaign-sticky {
+      transition: none;
+    }
+
+    .cta:hover,
+    .campaign-whatsapp:hover {
+      transform: none;
+    }
+  }
+}

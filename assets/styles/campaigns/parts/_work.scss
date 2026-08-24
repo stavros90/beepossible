@@ -1,0 +1,183 @@
+@use '../../typography' as *;
+
+/* ==========================================================================
+   PART: work
+   Portfolio grid of browser frames.
+   ========================================================================== */
+
+.campaign-work {
+  &__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 1.25rem;
+    margin-bottom: clamp(2rem, 5vw, 3.5rem);
+
+    .campaign-h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__sub {
+    @extend %font-primary;
+    margin: 0;
+    font-size: clamp(1rem, 2.4vw, 1.25rem);
+    color: rgba(245, 245, 245, 0.55);
+  }
+
+  &__grid {
+    display: grid;
+    gap: 1.75rem;
+
+    @media screen and (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem 1.75rem;
+    }
+  }
+
+  /* Ready-made device mockups stay two to a row. The artwork carries its own
+     margin and a phone off to the right, so the website itself is only about
+     half the file's width — a third column would shrink it past reading. */
+  &__grid--mockups {
+    --mockup-gap: 1.75rem;
+    gap: var(--mockup-gap);
+
+    @media screen and (min-width: 1024px) {
+      --mockup-gap: clamp(2rem, 4vw, 3rem);
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* An odd number of cards would strand the last one in a half-empty row. It
+       spans both columns and centres at a single card's width, which reads as
+       deliberate rather than as a gap where a sixth website should be. */
+    .campaign-work__item:last-child:nth-child(odd) {
+      @media screen and (min-width: 640px) {
+        grid-column: 1 / -1;
+        width: calc(50% - var(--mockup-gap) / 2);
+        margin-inline: auto;
+      }
+    }
+  }
+
+  /* Composed mockup: browser chrome and phone are already in the image, so it is
+     shown whole and never wrapped in our own frame. */
+  &__mockup {
+    overflow: hidden;
+    border-radius: 0.75rem;
+    aspect-ratio: 2400 / 1260;
+    /* Matches the artwork's own canvas, so no seam shows at the rounded corners. */
+    background: #eef0f2;
+    box-shadow: 0 24px 55px -28px rgba(0, 0, 0, 0.85);
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  }
+
+  &__item:hover &__mockup img,
+  &__item:focus-within &__mockup img {
+    transform: scale(1.03);
+  }
+
+  /* Card without browser chrome, used until a case study has a website
+     screenshot. See the note in parts/work.php. */
+  &__plate {
+    overflow: hidden;
+    border-radius: 0.625rem;
+    aspect-ratio: 16 / 11;
+    background: #101010;
+    box-shadow: 0 0 0 1px rgba(245, 245, 245, 0.08),
+                0 18px 40px -22px rgba(0, 0, 0, 0.8);
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+  }
+
+  &__item:hover &__plate img,
+  &__item:focus-within &__plate img {
+    transform: scale(1.03);
+  }
+
+  &__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem 0.75rem;
+    padding-top: 1rem;
+
+    h3 {
+      @extend %font-primary;
+      margin: 0;
+      font-size: 1.0625rem;
+      font-weight: 700;
+      color: var(--c-paper);
+    }
+
+    p {
+      @extend %font-geologica;
+      margin: 0;
+      font-weight: 300;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(245, 245, 245, 0.45);
+    }
+  }
+
+  &__cta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: clamp(3rem, 7vw, 5rem);
+    text-align: center;
+  }
+
+  &__invite {
+    @extend %font-display;
+    margin: 0;
+    font-size: clamp(1.75rem, 5vw, 2.75rem);
+    line-height: 1;
+    color: var(--c-paper);
+  }
+}
+
+/* The card is the hover target; the transition itself lives in parts/_browser.scss. */
+.campaign-work__item:hover,
+.campaign-work__item:focus-within {
+  .campaign-browser[data-campaign-scrollshot="hover"] .campaign-browser__shot {
+    transform: translateY(var(--shot-travel));
+  }
+}
+
+/* On a light section the grid's own text colours have to flip. */
+.campaign-section--white,
+.campaign-section--paper {
+  .campaign-work__sub {
+    color: var(--c-quiet);
+  }
+
+  .campaign-work__meta h3,
+  .campaign-work__invite {
+    color: var(--c-ink);
+  }
+
+  .campaign-work__meta p {
+    color: var(--c-quiet);
+  }
+}

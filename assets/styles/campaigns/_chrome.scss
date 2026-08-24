@@ -1,0 +1,287 @@
+@use '../typography' as *;
+
+/* ==========================================================================
+   CHROME
+   Skip link, header, sticky CTA and footer — campaigns/shared/header.php and
+   campaigns/shared/footer.php.
+   ========================================================================== */
+
+
+.campaign-skip {
+  @extend %font-primary;
+  position: absolute;
+  left: 1rem;
+  top: -3rem;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.5rem;
+  background: var(--c-accent);
+  color: var(--c-ink);
+  font-size: 0.9375rem;
+  text-decoration: none;
+  transition: top 0.15s ease;
+
+  &:focus {
+    top: 1rem;
+  }
+}
+
+
+/* --- Header --------------------------------------------------------------- */
+
+.campaign-header {
+  background: var(--c-night);
+  color: var(--c-paper);
+  padding: 1.25rem 0;
+
+  &__inner {
+    width: 100%;
+    max-width: 78rem;
+    margin: 0 auto;
+    padding-left: var(--c-gutter);
+    padding-right: var(--c-gutter);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__note {
+    @extend %font-geologica;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(245, 245, 245, 0.5);
+  }
+
+  &__dot {
+    width: 0.375rem;
+    height: 0.375rem;
+    border-radius: 50%;
+    background: var(--c-accent);
+  }
+}
+
+/* The logo is a button, not a link: it returns you to the top of the page.
+   A campaign page has one exit, and it is the form. */
+.campaign-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--c-paper);
+  cursor: pointer;
+
+  .beelogo {
+    width: 1.75rem;
+    height: auto;
+    flex: none;
+  }
+
+  &__word {
+    @extend %font-display;
+    font-size: 1.25rem;
+    letter-spacing: 0.06em;
+    line-height: 1;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--c-accent);
+    outline-offset: 4px;
+  }
+}
+
+
+/* --- Sticky CTA -----------------------------------------------------------
+   Hidden while the hero's own CTAs are on screen, and hidden again once the
+   form is in view: it only appears when there is no other way to convert.
+   ------------------------------------------------------------------------- */
+
+.campaign-sticky {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem var(--c-gutter);
+  background: rgba(11, 11, 11, 0.94);
+  border-top: 1px solid var(--c-line-alt);
+  transform: translateY(110%);
+  visibility: hidden;
+  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.32s;
+
+  @supports (backdrop-filter: blur(8px)) {
+    background: rgba(11, 11, 11, 0.8);
+    backdrop-filter: blur(10px);
+  }
+
+  &.is-visible {
+    transform: translateY(0);
+    visibility: visible;
+  }
+
+  &__logo,
+  &__line {
+    display: none;
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+
+    .cta {
+      flex: 1 1 auto;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    top: 0;
+    bottom: auto;
+    border-top: 0;
+    border-bottom: 1px solid var(--c-line-alt);
+    transform: translateY(-110%);
+    justify-content: space-between;
+
+    &__logo {
+      display: inline-flex;
+      align-items: center;
+      padding: 0;
+      border: 0;
+      background: none;
+      cursor: pointer;
+
+      .beelogo {
+        width: 1.5rem;
+        height: auto;
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--c-accent);
+        outline-offset: 4px;
+      }
+    }
+
+    /* Declared longhand, not @extend: Sass cannot extend a placeholder from
+       inside a media query. */
+    &__line {
+      display: block;
+      margin: 0;
+      font-family: 'Manrope', sans-serif;
+      font-size: 0.9375rem;
+      color: rgba(245, 245, 245, 0.6);
+    }
+
+    &__actions {
+      width: auto;
+
+      .cta {
+        flex: none;
+      }
+    }
+  }
+}
+
+/* Anchor targets clear the desktop sticky bar. */
+.campaign [id] {
+  scroll-margin-top: 5rem;
+}
+
+
+/* --- Footer -------------------------------------------------------------- */
+
+.campaign-footer {
+  background: var(--c-night);
+  color: rgba(245, 245, 245, 0.7);
+  padding: clamp(2.5rem, 6vw, 4rem) 0 7rem;
+
+  @media screen and (min-width: 768px) {
+    padding-bottom: clamp(2.5rem, 6vw, 4rem);
+  }
+
+  &__grid {
+    display: grid;
+    gap: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--c-line-alt);
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 3rem;
+    }
+  }
+
+  .beelogo {
+    width: 2rem;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  &__tagline {
+    @extend %font-primary;
+    max-width: 28ch;
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+  }
+
+  &__contact {
+    @extend %font-primary;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+
+    p,
+    address {
+      margin: 0;
+      font-style: normal;
+    }
+
+    a {
+      color: var(--c-paper);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(245, 245, 245, 0.25);
+
+      &:hover {
+        border-bottom-color: var(--c-accent);
+        color: var(--c-accent);
+      }
+    }
+  }
+
+  &__legal {
+    @extend %font-primary;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding-top: 1.5rem;
+    font-size: 0.8125rem;
+    color: rgba(245, 245, 245, 0.45);
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+
+      &:hover {
+        color: var(--c-accent);
+      }
+    }
+  }
+}

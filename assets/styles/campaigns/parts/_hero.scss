@@ -1,0 +1,101 @@
+@use '../../typography' as *;
+
+/* ==========================================================================
+   PART: hero
+   ========================================================================== */
+
+.campaign-hero {
+  position: relative;
+  background: var(--c-night);
+  color: var(--c-paper);
+  padding-top: clamp(2.5rem, 6vw, 4.5rem);
+  padding-bottom: clamp(3rem, 7vw, 5rem);
+  overflow: hidden;
+
+  /* Light spilling off the screen. Motivated by the device rather than a
+     decorative gradient blob dropped behind the headline. */
+  &::before {
+    content: "";
+    position: absolute;
+    top: -10%;
+    right: -5%;
+    width: 70%;
+    height: 120%;
+    background: radial-gradient(closest-side, rgba(255, 195, 0, 0.14), rgba(255, 195, 0, 0) 100%);
+    pointer-events: none;
+  }
+
+  &__grid {
+    display: grid;
+    gap: clamp(2.5rem, 6vw, 4rem);
+    align-items: center;
+
+    @media screen and (min-width: 1024px) {
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: 3rem;
+    }
+  }
+
+  &__copy {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    @extend %font-display;
+    font-size: clamp(2.75rem, 9vw, 5.25rem);
+    line-height: 0.92;
+    letter-spacing: 0.005em;
+    color: var(--c-paper);
+    margin-bottom: 1.5rem;
+    text-wrap: balance;
+
+    em {
+      font-style: normal;
+      color: var(--c-accent);
+    }
+  }
+
+  &__sub {
+    @extend %font-primary;
+    max-width: 44ch;
+    margin-bottom: 2rem;
+    font-size: clamp(1rem, 2.2vw, 1.1875rem);
+    line-height: 1.65;
+    color: rgba(245, 245, 245, 0.72);
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.75rem;
+
+    .cta,
+    .campaign-whatsapp {
+      width: 100%;
+
+      @media screen and (min-width: 480px) {
+        width: auto;
+      }
+    }
+  }
+
+  &__visual {
+    position: relative;
+    z-index: 2;
+  }
+
+  /* No visual: centre the argument rather than leaving a column of dead space. */
+  &--copy-only {
+    padding-bottom: clamp(4rem, 9vw, 7rem);
+
+    .campaign-hero__grid {
+      max-width: 44rem;
+    }
+
+    .campaign-hero__sub {
+      max-width: 52ch;
+    }
+  }
+}

@@ -1,0 +1,112 @@
+@use '../../typography' as *;
+
+/* ==========================================================================
+   PART: form
+   Underlined fields on a dark panel. No boxes: the form should read as a short
+   conversation, not a government document.
+   ========================================================================== */
+
+.campaign-form {
+  &__row {
+    display: grid;
+    gap: 0 1.25rem;
+
+    @media screen and (min-width: 560px) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__gotcha {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+
+  &__captcha {
+    margin: 0.5rem 0 1.5rem;
+  }
+
+  &__submit {
+    width: 100%;
+
+    &[disabled] {
+      opacity: 0.65;
+      cursor: progress;
+      transform: none;
+    }
+  }
+
+  &__reassure {
+    @extend %font-primary;
+    margin: 1rem 0 0;
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: rgba(245, 245, 245, 0.5);
+  }
+}
+
+.campaign-field {
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  label {
+    @extend %font-geologica;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245, 245, 245, 0.6);
+  }
+
+  &__hint {
+    letter-spacing: 0.06em;
+    text-transform: none;
+    color: rgba(245, 245, 245, 0.35);
+  }
+
+  input,
+  textarea {
+    @extend %font-primary;
+    width: 100%;
+    padding: 0.75rem 0;
+    border: 0;
+    border-bottom: 1px solid rgba(245, 245, 245, 0.28);
+    border-radius: 0;
+    background: transparent;
+    color: var(--c-paper);
+    font-size: 1rem;
+    font-weight: 500;
+    transition: border-color 0.18s ease;
+
+    &::placeholder {
+      color: rgba(245, 245, 245, 0.3);
+      font-weight: 400;
+    }
+
+    &:hover {
+      border-bottom-color: rgba(245, 245, 245, 0.45);
+    }
+
+    &:focus {
+      outline: none;
+      border-bottom-color: var(--c-accent);
+    }
+
+    /* :user-invalid, not :invalid — an empty required field should not turn red
+       before the visitor has typed anything. */
+    &:user-invalid {
+      border-bottom-color: #ff6b5e;
+    }
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 6rem;
+  }
+}

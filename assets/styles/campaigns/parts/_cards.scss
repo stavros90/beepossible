@@ -1,0 +1,186 @@
+@use '../../typography' as *;
+
+/* ==========================================================================
+   PART: cards
+
+   Two variants. Both use auto-fit rather than a fixed column count, so a
+   campaign can pass two, three or four cards without touching any CSS.
+
+     --rule    pain points and arguments. No boxes: a border around a sentence
+               adds weight without adding meaning, so the divider is a hairline
+               with a short accent rule marking where each one starts.
+     --pillar  short benefit statements, optionally with an icon.
+   ========================================================================== */
+
+.campaign-cards {
+
+  /* Split intro: heading holds the left column, the argument the right. */
+  &__intro {
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+
+    @media screen and (min-width: 900px) {
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      align-items: start;
+    }
+
+    .campaign-h2 {
+      margin-bottom: 0;
+    }
+  }
+
+  &__body {
+    p {
+      @extend %font-primary;
+      margin: 0 0 1rem;
+      font-size: clamp(1rem, 2.2vw, 1.125rem);
+      line-height: 1.7;
+      color: var(--c-muted);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__lead {
+    font-weight: 700;
+    color: var(--c-ink);
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+  }
+
+  &__outro {
+    @extend %font-primary;
+    margin: clamp(2.5rem, 6vw, 4rem) auto 0;
+    max-width: 32ch;
+    text-align: center;
+    font-size: clamp(1.125rem, 3vw, 1.625rem);
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--c-ink);
+  }
+}
+
+
+/* --- Variant: rule -------------------------------------------------------- */
+
+.campaign-cards__list--rule {
+  gap: 0;
+  border-top: 1px solid var(--c-line);
+
+  @media screen and (min-width: 900px) {
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: 0 2.5rem;
+  }
+
+  .campaign-cards__item {
+    position: relative;
+    padding: 2rem 0;
+    border-bottom: 1px solid var(--c-line);
+
+    @media screen and (min-width: 900px) {
+      padding: 2.25rem 0 0;
+      border-bottom: 0;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: -1px;
+        left: 0;
+        width: 2.5rem;
+        height: 2px;
+        background: var(--c-accent);
+      }
+    }
+
+    h3 {
+      @extend %font-primary;
+      margin-bottom: 0.75rem;
+      font-size: clamp(1.125rem, 2.4vw, 1.375rem);
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--c-ink);
+    }
+
+    p {
+      @extend %font-primary;
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--c-muted);
+    }
+  }
+}
+
+
+/* --- Variant: pillar ------------------------------------------------------ */
+
+.campaign-cards__list--pillar {
+  gap: 2rem;
+  margin-top: clamp(2.5rem, 6vw, 4.5rem);
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+    gap: 2.5rem;
+  }
+
+  .campaign-cards__item {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--c-line);
+
+    h3 {
+      @extend %font-primary;
+      margin-bottom: 0.375rem;
+      font-size: 1.0625rem;
+      font-weight: 700;
+      line-height: 1.4;
+      color: var(--c-ink);
+    }
+
+    p {
+      @extend %font-primary;
+      margin: 0;
+      font-size: 0.9375rem;
+      line-height: 1.6;
+      color: var(--c-quiet);
+    }
+  }
+
+  .campaign-cards__icon {
+    display: inline-flex;
+    margin-bottom: 1rem;
+    color: var(--c-ink);
+
+    svg {
+      display: block;
+    }
+  }
+}
+
+
+/* --- On a dark section ---------------------------------------------------- */
+
+.campaign-section--dark.campaign-cards {
+  .campaign-cards__list--rule,
+  .campaign-cards__item {
+    border-color: var(--c-line-alt);
+  }
+
+  .campaign-cards__item h3,
+  .campaign-cards__lead,
+  .campaign-cards__outro,
+  .campaign-cards__icon {
+    color: var(--c-paper);
+  }
+
+  .campaign-cards__item p,
+  .campaign-cards__body p {
+    color: rgba(245, 245, 245, 0.7);
+  }
+}

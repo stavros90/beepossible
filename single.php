@@ -9,6 +9,10 @@
 
         <?php the_category( '', null ); ?>
 
+        <?php if ( bp_show_author() ) : ?>
+          <p class="post-author">By <?php the_author(); ?></p>
+        <?php endif; ?>
+
         <?php if(has_post_thumbnail()) : 
           the_post_thumbnail(); 
         endif; ?>

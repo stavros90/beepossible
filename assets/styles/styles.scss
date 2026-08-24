@@ -1,9 +1,9 @@
 /*!
 Theme Name: BeePossible
-Author: BeePossible
+Author: BeePossible LTD
 Author URI: https://beepossible.com/
 Description: We help businesses thrive by understanding what makes them great—and then building smart, tailored strategies that turn potential into progress.
-Version: 1.6.1
+Version: 1.12.1
 Text Domain: beepossible
 */
 
@@ -26,4 +26,5 @@ Text Domain: beepossible
 @use './projects';
 @use './faqs';
 @use './scroll-progress';
+@use './campaigns';
 @use './vendors/aos';

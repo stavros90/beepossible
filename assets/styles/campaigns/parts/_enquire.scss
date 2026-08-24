@@ -1,0 +1,40 @@
+@use '../../typography' as *;
+
+/* ==========================================================================
+   PART: enquire
+   ========================================================================== */
+
+.campaign-enquire {
+  &__grid {
+    display: grid;
+    gap: clamp(2.5rem, 6vw, 4rem);
+
+    @media screen and (min-width: 900px) {
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: 4rem;
+    }
+  }
+
+  &__sub {
+    @extend %font-primary;
+    max-width: 34ch;
+    margin: 0;
+    font-size: clamp(1rem, 2.2vw, 1.125rem);
+    line-height: 1.65;
+    color: rgba(245, 245, 245, 0.7);
+  }
+
+  &__aside {
+    margin-top: clamp(2rem, 5vw, 3rem);
+    padding-top: 1.75rem;
+    border-top: 1px solid var(--c-line-alt);
+  }
+
+  &__whatsapp-intro {
+    @extend %font-primary;
+    margin: 0 0 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--c-paper);
+  }
+}

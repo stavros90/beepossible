@@ -1,0 +1,40 @@
+/* ==========================================================================
+   CAMPAIGN LANDING PAGES
+
+   One entry point, so styles.scss carries a single line no matter how many
+   campaigns exist. The file layout mirrors /campaigns exactly:
+
+     campaigns/shared/parts/faq.php   <->   campaigns/parts/_faq.scss
+     campaigns/websites/index.php     <->   campaigns/pages/_websites.scss
+
+   Everything here is scoped under .campaign or prefixed .campaign-, so a
+   landing page can never inherit surprises from the main site and can never
+   push any of its own onto it.
+
+   Adding a campaign: add one line under PAGES. Nothing else in the theme's
+   stylesheets changes.
+   ========================================================================== */
+
+/* Shared foundation */
+@use './tokens';
+@use './primitives';
+@use './chrome';
+
+/* Reusable sections, one file per part */
+@use './parts/browser';
+@use './parts/devices';
+@use './parts/form';
+@use './parts/hero';
+@use './parts/proof';
+@use './parts/cards';
+@use './parts/work';
+@use './parts/process';
+@use './parts/testimonials';
+@use './parts/faq';
+@use './parts/enquire';
+
+/* Per-campaign overrides. Most campaigns need none. */
+@use './pages/websites';
+
+/* Last, so it can override anything above it */
+@use './motion';

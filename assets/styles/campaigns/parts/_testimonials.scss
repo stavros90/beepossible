@@ -1,0 +1,110 @@
+@use '../../typography' as *;
+
+/* ==========================================================================
+   PART: testimonials
+
+   Two or three written reviews in a row. One column on mobile, then as many
+   columns as there are cards from 900px up — auto-fit means deleting a review
+   from the HTML needs no change here.
+   ========================================================================== */
+
+.campaign-voices {
+  &__grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: minmax(0, 1fr);
+
+    /* minmax(0, …) rather than a bare 1fr: a long unbroken word in a review
+       would otherwise push the row wider than the container. */
+    @media screen and (min-width: 900px) {
+      grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    }
+  }
+
+  /* Quotes start at a common top edge and the names are pushed to a common
+     bottom one, so uneven review lengths still resolve into a tidy row. */
+  &__quote {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin: 0;
+    padding: clamp(1.75rem, 4vw, 2.5rem);
+    border-radius: var(--c-radius);
+    background: var(--c-paper);
+
+    blockquote {
+      @extend %font-primary;
+      margin: 0;
+      font-size: clamp(1rem, 2vw, 1.125rem);
+      font-weight: 500;
+      line-height: 1.55;
+      color: var(--c-ink);
+
+      &::before {
+        content: "\201C";
+        color: var(--c-accent);
+      }
+
+      &::after {
+        content: "\201D";
+        color: var(--c-accent);
+      }
+    }
+
+    cite {
+      @extend %font-primary;
+      margin-top: auto;
+      font-style: normal;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--c-ink);
+
+      span {
+        display: block;
+        margin-top: 0.15rem;
+        font-weight: 400;
+        color: var(--c-quiet);
+      }
+    }
+  }
+
+  /* Stars are attribution, not decoration, so they stay small and quiet. */
+  &__rating {
+    font-size: 1rem;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    color: var(--c-accent);
+  }
+
+  &__support {
+    @extend %font-primary;
+    margin: clamp(2rem, 5vw, 3rem) 0 0;
+    text-align: center;
+    font-size: 1rem;
+    color: var(--c-quiet);
+  }
+}
+
+/* On a paper section the card needs to separate from the background. */
+.campaign-section--paper.campaign-voices .campaign-voices__quote {
+  background: var(--c-white);
+}
+
+.campaign-section--dark.campaign-voices {
+  .campaign-voices__quote {
+    background: var(--c-slate);
+
+    blockquote,
+    cite {
+      color: var(--c-paper);
+    }
+
+    cite span {
+      color: rgba(245, 245, 245, 0.55);
+    }
+  }
+
+  .campaign-voices__support {
+    color: rgba(245, 245, 245, 0.6);
+  }
+}

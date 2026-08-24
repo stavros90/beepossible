@@ -48,6 +48,20 @@
       margin-bottom: 2rem;
     }
   }
+
+  /* Author name — only printed when the post opts in via Article Options.
+     The category pills carry a 4rem gap, so they give some of it back when a
+     byline follows them. */
+  ul.post-categories:has(+ .post-author) {
+    margin-bottom:1.25rem;
+  }
+
+  .post-author {
+    margin:0 0 3rem 0;
+    font-size:1rem;
+    font-weight:600;
+    color:var(--gray2);
+  }
 }
 
 
@@ -117,6 +131,75 @@
     &:hover {
       cursor: pointer;
       background:var(--primary)
+    }
+  }
+
+  /* Blockquotes — yellow left border, matching the case study customer review.
+     Covers the classic editor tag, the Gutenberg quote block and the blockquote
+     nested inside a pullquote figure. */
+  blockquote,
+  .wp-block-quote,
+  .wp-block-pullquote blockquote {
+    position: relative;
+    margin:2rem 0 2.5rem 0;
+    padding:1.5rem 1.5rem 1.5rem 1.75rem;
+    border-left:5px solid var(--primary);
+    border-radius:0 1rem 1rem 0;
+    /* The page itself is white-smoke, so the quote needs a tint of the accent
+       rather than a gray fill to read as a distinct block. */
+    background:rgba(255,195,0,.09);
+    color:var(--carbon);
+    font-size:1.15rem;
+    font-style: italic;
+    line-height:1.5;
+
+    p {
+      margin:0;
+      padding:0;
+      font-size: inherit;
+      font-style: inherit;
+      line-height: inherit;
+
+      & + p {
+        margin-top:1rem;
+      }
+    }
+
+    cite,
+    footer,
+    .wp-block-quote__citation {
+      display:block;
+      margin-top:1rem;
+      font-size:.95rem;
+      font-style: normal;
+      font-weight:600;
+      color:rgba(19,19,19,.65);
+    }
+
+    @media screen and (min-width:768px) {
+      padding:1.75rem 2rem 1.75rem 2.25rem;
+      font-size:1.25rem;
+    }
+  }
+
+  /* The pullquote figure itself is only a wrapper — the border lives on the
+     blockquote inside it. */
+  .wp-block-pullquote {
+    padding:0;
+    border:0;
+    background: none;
+  }
+
+  /* Right-aligned quotes read better with the accent on the right. */
+  blockquote.has-text-align-right,
+  .wp-block-quote.has-text-align-right {
+    border-left:0;
+    border-right:5px solid var(--primary);
+    border-radius:1rem 0 0 1rem;
+    padding:1.5rem 1.75rem 1.5rem 1.5rem;
+
+    @media screen and (min-width:768px) {
+      padding:1.75rem 2.25rem 1.75rem 2rem;
     }
   }
 }

@@ -1,0 +1,107 @@
+@use '../../typography' as *;
+
+/* ==========================================================================
+   PART: devices
+   A browser frame at laptop scale with a phone leaning in from the left.
+   ========================================================================== */
+
+/* On wide screens the stage bleeds off the right edge and overlaps whatever
+   sits below it, tying the opening two sections into one move. */
+.campaign-stage {
+  position: relative;
+  padding-bottom: 2.5rem;
+
+  @media screen and (min-width: 1024px) {
+    margin-right: calc(var(--c-gutter) * -1 - 3vw);
+    margin-bottom: clamp(-5rem, -4vw, -2.5rem);
+  }
+
+  /* A ready-made mockup instead of the assembled composition. The artwork carries
+     its own margin and sits the phone against its right edge, so the bleed above
+     would push that phone off the viewport — it is cancelled here rather than
+     being made conditional up there. */
+  &--mockup {
+    padding-bottom: 0;
+
+    @media screen and (min-width: 1024px) {
+      margin-right: 0;
+      margin-bottom: clamp(-2.5rem, -2vw, -1rem);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 0.75rem;
+      /* The hero is dark and the artwork's canvas is light, so it needs lifting
+         off the background rather than sitting flat on it. */
+      box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.9);
+    }
+  }
+
+  &--empty {
+    display: grid;
+    place-items: center;
+    min-height: 16rem;
+    padding: 2rem;
+    border: 1px dashed var(--c-line-alt);
+    border-radius: 0.75rem;
+    text-align: center;
+
+    p {
+      @extend %font-primary;
+      margin: 0;
+      max-width: 24ch;
+      font-size: 0.9375rem;
+      color: rgba(245, 245, 245, 0.5);
+    }
+  }
+}
+
+.campaign-phone {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 26%;
+  max-width: 8.5rem;
+  padding: 0.3rem;
+  border-radius: 1.25rem;
+  background: #202020;
+  box-shadow: 0 0 0 1px rgba(245, 245, 245, 0.1),
+              0 24px 48px -18px rgba(0, 0, 0, 0.8);
+
+  @media screen and (min-width: 1024px) {
+    left: -2.5rem;
+    max-width: 10rem;
+  }
+
+  &__screen {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    background: var(--c-white);
+    aspect-ratio: 9 / 17;
+  }
+
+  &__shot {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+  }
+
+  /* Speaker slit, the one detail that makes the frame read as a phone. */
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0.65rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22%;
+    height: 0.1875rem;
+    border-radius: 3rem;
+    background: rgba(245, 245, 245, 0.25);
+    z-index: 2;
+  }
+}
