@@ -39,6 +39,13 @@
     background: var(--c-night);
     color: var(--c-paper);
   }
+
+  /* Two sections that share a background and read as one: the second drops its
+     top padding so the pair keeps a single section's rhythm instead of opening
+     a gap where a heading would go. */
+  &--flush-top {
+    padding-top: 1px;
+  }
 }
 
 

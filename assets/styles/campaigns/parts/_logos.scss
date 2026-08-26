@@ -1,0 +1,113 @@
+@use '../../typography' as *;
+
+/* ==========================================================================
+   PART: logos
+
+   An infinite strip, done with no JavaScript at all.
+
+   The part prints the logo list twice and this file animates the track to
+   -50%. At that point the second copy sits exactly where the first one
+   started, so restarting the animation is invisible and the loop is seamless
+   for any number of logos. Nothing here needs to know the count — which is
+   the difference from the homepage strip, where a JS-set --item-count has to
+   agree with however many nodes were cloned.
+   ========================================================================== */
+
+.campaign-logos {
+
+  &__sub {
+    @extend %font-primary;
+    margin: -1.5rem 0 0;
+    font-size: clamp(1rem, 2.4vw, 1.25rem);
+    color: var(--c-quiet);
+  }
+
+  /* Logos fade into the section rather than being cut in half at the edge.
+     Prefixed by hand: the build runs sass-loader with no autoprefixer, and
+     Safari only dropped the prefix in 15.4. Where neither applies the strip
+     still scrolls, it just ends with a hard edge. */
+  &__viewport {
+    margin-top: clamp(2rem, 5vw, 3rem);
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      #000 8%,
+      #000 92%,
+      transparent
+    );
+  }
+
+  &__track {
+    display: flex;
+    width: max-content;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    animation: campaign-marquee var(--c-marquee, 45s) linear infinite;
+  }
+
+  &__item {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.875rem;
+    padding: 0.625rem;
+    border-radius: var(--c-radius);
+    background: var(--c-slate);
+
+    img {
+      display: block;
+      width: clamp(8.75rem, 18vw, 19.5rem);
+      height: auto;
+    }
+  }
+}
+
+
+/* --- On a light section --------------------------------------------------- */
+
+.campaign-section--white,
+.campaign-section--paper {
+  &.campaign-logos .campaign-logos__item {
+    background: var(--c-white);
+    border: 1px solid var(--c-line);
+  }
+}
+
+
+/* --- Motion --------------------------------------------------------------- */
+
+@keyframes campaign-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+/* Stopped, not hidden. The logos are the proof, so they stay on the page and
+   become a strip you scroll by hand. */
+@media (prefers-reduced-motion: reduce) {
+  .campaign-logos {
+    &__viewport {
+      overflow-x: auto;
+      -webkit-mask-image: none;
+      mask-image: none;
+    }
+
+    &__track {
+      animation: none;
+    }
+  }
+}

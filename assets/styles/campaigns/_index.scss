@@ -28,6 +28,8 @@
 @use './parts/proof';
 @use './parts/cards';
 @use './parts/work';
+@use './parts/logos';
+@use './parts/case-studies';
 @use './parts/process';
 @use './parts/testimonials';
 @use './parts/faq';
@@ -35,6 +37,10 @@
 
 /* Per-campaign overrides. Most campaigns need none. */
 @use './pages/websites';
+/* Aliased because Sass derives a module namespace from the filename, and an
+   identifier cannot start with a digit. The filename still mirrors the
+   campaign folder, which is the rule worth keeping. */
+@use './pages/360-marketing-partner' as marketing-360;
 
 /* Last, so it can override anything above it */
 @use './motion';

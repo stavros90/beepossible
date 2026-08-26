@@ -13,6 +13,8 @@ campaigns/
     parts/              reusable sections and elements
   websites/
     index.php           one campaign = one folder = one template file
+  360-marketing-partner/
+    index.php
 ```
 
 Styles mirror this exactly, under `assets/styles/campaigns/`:
@@ -22,6 +24,7 @@ Styles mirror this exactly, under `assets/styles/campaigns/`:
 | `shared/parts/faq.php` | `parts/_faq.scss` |
 | `shared/header.php`, `shared/footer.php` | `_chrome.scss` |
 | `websites/index.php` | `pages/_websites.scss` |
+| `360-marketing-partner/index.php` | `pages/_360-marketing-partner.scss` |
 
 Behaviour lives in one file: `assets/scripts/modules/campaign.js`. It exits
 immediately when `.campaign` is not on the page, so it costs the rest of the
@@ -96,6 +99,8 @@ Pass `'bg' => 'paper' | 'white' | 'dark'` to control the alternating rhythm.
 | `proof` | One yellow line of social proof under the hero |
 | `cards` | Three-ish points. `variant: 'rule'` for problems, `'pillar'` for benefits |
 | `work` | Portfolio grid. Curated mockups via `items`, or queried live from case studies |
+| `logos` | Auto-scrolling strip of every client logo. CSS only, no JS, never pauses |
+| `case-studies` | Written proof: client, service, one result, a short body, a quote. Each card reserves an image slot |
 | `process` | Numbered steps |
 | `testimonials` | Two or three written reviews, typed into the part itself |
 | `faq` | Accordion, rendered from the same array as the FAQPage schema |
@@ -148,6 +153,32 @@ inside our own browser frames.
 
 An odd number of `items` centres the last card rather than stranding it in a
 half-empty row, so five reads as finished.
+
+### Case study card images
+
+Each card reserves a 3:2 slot at the top. Leave `image` out and it renders as an
+outlined box reading "Image to come" — that box is the brief for whoever is
+making the artwork, and it holds its space so filling it later shifts nothing:
+
+```php
+bp_campaign_part( 'case-studies', [
+  'items' => [
+    [
+      'client'  => 'Dior Cyprus',
+      'service' => 'Event production',
+      'image'   => 'assets/images/campaigns/case-dior.webp', // optional
+      'result'  => '+171% Instagram growth',                 // or 'tagline'
+      'text'    => '…',
+    ],
+  ],
+] );
+```
+
+Export at **1200 × 800** into `assets/images/campaigns`. A path pointing at a
+file that isn't there falls back to the empty box rather than rendering broken.
+
+Use `result` when there is a number and `tagline` when there isn't — work whose
+value isn't a percentage still needs a headline.
 
 ### The hero visual
 

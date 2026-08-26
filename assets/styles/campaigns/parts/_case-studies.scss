@@ -1,0 +1,193 @@
+@use '../../typography' as *;
+
+/* ==========================================================================
+   PART: case-studies
+
+   Written proof, two cards to a row. No imagery: the result is the argument,
+   so the number is the largest thing on the card and everything else is
+   support underneath it.
+
+   Boxes are justified here in a way they aren't in the cards part — each card
+   is a separate client, and the border is what stops four brands reading as
+   one paragraph.
+   ========================================================================== */
+
+.campaign-proofs {
+
+  &__sub {
+    @extend %font-primary;
+    margin: -1.5rem 0 0;
+    max-width: 46ch;
+    font-size: clamp(1rem, 2.4vw, 1.25rem);
+    color: var(--c-quiet);
+  }
+
+  &__grid {
+    display: grid;
+    gap: 1.5rem;
+    margin: clamp(2.5rem, 6vw, 4rem) 0 0;
+    padding: 0;
+    list-style: none;
+
+    @media screen and (min-width: 768px) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 2rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    padding: clamp(1.75rem, 4vw, 2.5rem);
+    border: 1px solid var(--c-line);
+    border-radius: var(--c-radius);
+    background: var(--c-white);
+  }
+
+  /* Reserved space, not a generated composite. Empty it shows an outlined box
+     at the final aspect ratio, so what a designer is being asked for is the
+     shape on screen. aspect-ratio holds the layout either way, so filling the
+     slot later shifts nothing. */
+  &__media {
+    aspect-ratio: 3 / 2;
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+    border-radius: calc(var(--c-radius) - 0.25rem);
+    overflow: hidden;
+    background: rgba(19, 19, 19, 0.04);
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &--empty {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px dashed rgba(19, 19, 19, 0.25);
+      background: transparent;
+
+      span {
+        @extend %font-geologica;
+        font-weight: 300;
+        font-size: 0.6875rem;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--c-quiet);
+      }
+    }
+  }
+
+  &__service {
+    @extend %font-geologica;
+    margin: 0 0 1rem;
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--c-quiet);
+  }
+
+  &__client {
+    @extend %font-display;
+    margin: 0;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    line-height: 1;
+    color: var(--c-ink);
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid var(--c-accent);
+
+      &:hover {
+        color: var(--c-muted);
+      }
+    }
+  }
+
+  /* The reason the card exists, when there is a number to show. */
+  &__result {
+    @extend %font-display;
+    margin: 1.25rem 0 0;
+    font-size: clamp(1.5rem, 3.4vw, 2rem);
+    line-height: 1.05;
+    color: var(--c-accent);
+  }
+
+  /* Stands in for the result on work whose value isn't a percentage. */
+  &__tagline {
+    @extend %font-primary;
+    margin: 1.25rem 0 0;
+    font-size: clamp(1.0625rem, 2.4vw, 1.25rem);
+    font-weight: 700;
+    line-height: 1.4;
+    color: var(--c-ink);
+  }
+
+  &__text {
+    @extend %font-primary;
+    margin: 1rem 0 0;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--c-muted);
+  }
+
+  /* Pushed to the bottom so cards of unequal length still line their quotes up. */
+  &__quote {
+    margin: auto 0 0;
+
+    blockquote {
+      @extend %font-primary;
+      margin: 1.75rem 0 0;
+      padding-left: 1.25rem;
+      border-left: 2px solid var(--c-accent);
+      font-size: 1rem;
+      font-style: italic;
+      line-height: 1.65;
+      color: var(--c-ink);
+    }
+
+    figcaption {
+      @extend %font-primary;
+      margin: 0.75rem 0 0 1.25rem;
+      font-size: 0.875rem;
+      color: var(--c-quiet);
+    }
+  }
+}
+
+
+/* --- On a dark section ---------------------------------------------------- */
+
+.campaign-section--dark.campaign-proofs {
+  .campaign-proofs__item {
+    border-color: var(--c-line-alt);
+    background: var(--c-slate);
+  }
+
+  .campaign-proofs__client,
+  .campaign-proofs__tagline {
+    color: var(--c-paper);
+  }
+
+  .campaign-proofs__text,
+  .campaign-proofs__sub {
+    color: rgba(245, 245, 245, 0.7);
+  }
+
+  .campaign-proofs__quote blockquote {
+    color: var(--c-paper);
+  }
+
+  .campaign-proofs__media {
+    background: rgba(245, 245, 245, 0.05);
+
+    &--empty {
+      border-color: rgba(245, 245, 245, 0.28);
+      background: transparent;
+    }
+  }
+}

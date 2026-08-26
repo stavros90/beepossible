@@ -13,6 +13,8 @@
  * - $source   (string) campaign identifier stored with the lead
  * - $message_label / $message_placeholder (string) the one field whose wording
  *   changes per campaign: what we ask them to tell us about
+ * - $submit_label (string) button text. Worth matching to the CTA the ad
+ *   promised, so the last click on the page uses the words that got them here
  */
 
 $args = isset( $args ) ? $args : [];
@@ -21,6 +23,7 @@ $endpoint = isset( $args['endpoint'] ) ? $args['endpoint'] : bp_campaign_get( 'e
 $form_id  = isset( $args['form_id'] ) ? esc_attr( $args['form_id'] ) : 'campaignEnquiry';
 $source   = isset( $args['source'] ) ? esc_attr( $args['source'] ) : esc_attr( bp_campaign_get( 'name', 'campaign' ) );
 
+$submit_label        = isset( $args['submit_label'] ) ? $args['submit_label'] : 'Enquire';
 $message_label       = isset( $args['message_label'] ) ? $args['message_label'] : 'Tell us about your project';
 $message_placeholder = isset( $args['message_placeholder'] ) ? $args['message_placeholder'] : 'What you have now, what you need it to do, anything we should know.';
 
@@ -77,7 +80,7 @@ if ( ! $endpoint ) {
   </div>
 
   <button type="submit" class="cta cta-primary cta--lg campaign-form__submit">
-    <span class="campaign-form__submit-label">Enquire</span>
+    <span class="campaign-form__submit-label"><?php echo esc_html( $submit_label ); ?></span>
   </button>
 
   <p class="campaign-form__reassure">
