@@ -111,9 +111,35 @@
       flex-direction: row;
       gap:.5rem;
       justify-content: flex-start;
-      align-items: center;
+      // A metric that runs past one line should add lines, not change the bar.
+      // flex-start keeps the icon on the first line instead of drifting to the
+      // middle of a three-line block; the nudge optically centres it there.
+      align-items: flex-start;
+      min-height:2.5rem;
       font-size:22px;
+      line-height:1.35;
       font-weight: 400;
+
+      // The icon is a flex item, so it is shrinkable by default and squashes as
+      // soon as the text next to it needs the room.
+      > svg {
+        flex:0 0 24px;
+        width:24px;
+        height:24px;
+        margin-top:.15rem;
+      }
+
+      // A longer metric typed as a paragraph arrives wrapped in <p>, which
+      // would otherwise add its own margins on top of the bar's padding.
+      p {
+        margin:0;
+        font-size:inherit;
+        line-height:inherit;
+      }
+      p + p {
+        margin-top:.35rem;
+      }
+
       b, strong {
         color:var(--primary);
         margin-right:4px;

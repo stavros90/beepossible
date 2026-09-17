@@ -30,7 +30,6 @@
     <div class="campaign-header__inner">
       <button type="button" class="campaign-logo" data-campaign-top aria-label="Back to the top of the page">
         <?php get_template_part( 'assets/images/svg/logo-white' ); ?>
-        <span class="campaign-logo__word">Bee Possible</span>
       </button>
 
       <p class="campaign-header__note">

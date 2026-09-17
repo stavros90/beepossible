@@ -65,7 +65,7 @@
     </div>
 
     <p class="campaign-voices__support" data-aos="fade-up">
-      350+ brands trusted us with their brand.
+      350+ brands have trusted us with theirs.
     </p>
 
   </div>

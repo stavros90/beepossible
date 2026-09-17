@@ -24,7 +24,7 @@
             </ul>
           </div>
           <div class="footer-top__col">
-            <div class="footer-title lg-text-r">Let's connect</div>
+            <div class="footer-title lg-text-r">Let’s connect</div>
               <p class="footer-text lg-text-r">
                   <?php echo do_shortcode('[email]info@beepossible.com[/email]'); ?>
                   <br>

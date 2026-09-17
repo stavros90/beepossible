@@ -89,6 +89,10 @@
     margin-bottom:.75rem;
     border-radius:1.25rem;
     aspect-ratio: 4/5;
+    // The 4/5 box is enforced whatever the file's own ratio is, so a cover
+    // uploaded too small for the 536x670 crop would otherwise be stretched
+    // into it rather than trimmed.
+    object-fit: cover;
   }
   &__title {
     font-size:1.5rem;

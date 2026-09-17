@@ -16,7 +16,7 @@
 
     <?php the_content(); ?>
 
-    <a href="<?php echo esc_url(site_url('contact-us/')); ?>" class="cta cta-primary" role="button">Let's have a chat</a>
+    <a href="<?php echo esc_url(site_url('contact-us/')); ?>" class="cta cta-primary" role="button">Let’s have a chat</a>
 
   </section>
 
@@ -45,7 +45,7 @@
           <div class="swiper-slide person">
 
             <div class="person-card">
-              <video class="person-card__bg" autoplay muted loop playsinlinea preload="none"> 
+              <video class="person-card__bg" autoplay muted loop playsinline preload="none"> 
                 <source src="<?php the_field('background_video'); ?>" type="video/mp4">
               </video>
               <h3 class="person-card__name"><?php the_title(); ?></h3>
@@ -66,7 +66,7 @@
     get_template_part('partials/lets-do-this', null , [
       'section_title'  => 'We truly care for our partners',
       'section_class' => 'light-section',
-      'cta_text' => 'Let\'s have a chat',
+      'cta_text' => 'Let’s have a chat',
       'cta_url' => 'contact-us/',
     ]);
   ?>

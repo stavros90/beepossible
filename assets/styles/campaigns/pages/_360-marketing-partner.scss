@@ -11,8 +11,8 @@
 
   /* --- Section 2: what we do ---------------------------------------------
      Panels rather than the kit's accent-rule treatment. The yellow rules read
-     as five separate arguments being made; the whole point of this section is
-     that the five services are one offer, and a card each says that better.
+     as a series of separate arguments being made; the whole point of this
+     section is that the services are one offer, and a card each says so.
 
      The part is called with variant 'pillar', so what is being overridden here
      is a hairline top border and small quiet type — not the yellow rule, which
@@ -23,23 +23,13 @@
       margin-top: clamp(2rem, 5vw, 3rem);
       gap: 1.25rem;
 
-      /* Five items, and auto-fit resolves to four across at this container
-         width, stranding the fifth on a row of its own. A six-column track
-         gives 3 then 2, both rows full: two columns each for the first three,
-         three each for the last two. The part's own 0/80/160 stagger already
-         repeats every third card, so the animation lands on the same rhythm. */
+      /* Fixed at three rather than left to auto-fit, which resolves to four at
+         this container width and would break six cards into 4 + 2. Three across
+         gives two full rows, and it matches the part's own 0/80/160 stagger,
+         which already repeats every third card. */
       @media screen and (min-width: 900px) {
-        grid-template-columns: repeat(6, minmax(0, 1fr));
+        grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1.5rem;
-
-        .campaign-cards__item {
-          grid-column: span 2;
-        }
-
-        .campaign-cards__item:nth-child(4),
-        .campaign-cards__item:nth-child(5) {
-          grid-column: span 3;
-        }
       }
     }
 

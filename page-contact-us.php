@@ -4,7 +4,7 @@
 
   <section class="page-intro container light-section">
     <div class="page-decor-title">Contact us</div>
-    <h1 class="page-title">Let's <br>Connect</div>
+    <h1 class="page-title">Let’s <br>Connect</h1>
   </section>
 
   <section class="container contact-container light-section">
@@ -16,14 +16,14 @@
         <label class="screen-readers-only" for="EMAIL">Email</label>
         <input type="email" id="EMAIL" name="EMAIL" placeholder="Email" required>
 
-        <label class="screen-readers-only" for="PHONE">Phome number (optional)</label>
+        <label class="screen-readers-only" for="PHONE">Phone number (optional)</label>
         <input type="tel" id="PHONE" name="PHONE" placeholder="Phone number (optional)">
 
         <label class="screen-readers-only" for="COMPANY">Company / Brand Name (optional)</label>
         <input type="text" id="COMPANY" name="COMPANY" placeholder="Company / Brand Name (optional)">
 
         <select name="INQUIRY" id="INQUIRY">
-          <option value="General Inquiry">General Inquiry</option>
+          <option value="General Enquiry">General Enquiry</option>
           <option value="Press or Media">Press or Media</option>
           <option value="Collaboration / Partnership">Collaboration / Partnership</option>
           <option value="Job Opportunity">Job Opportunity</option>
@@ -45,7 +45,7 @@
       <p><?php echo do_shortcode('[email]info@beepossible.com[/email]'); ?></p>
 
       <h2>Call us</h2>
-      <p>+357 22 041145</p>
+      <p>+357 22 388858</p>
 
       <h2>Find us</h2>
       <p>

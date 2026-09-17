@@ -71,7 +71,6 @@
 .campaign-logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
   padding: 0;
   border: 0;
   background: none;
@@ -82,13 +81,6 @@
     width: 1.75rem;
     height: auto;
     flex: none;
-  }
-
-  &__word {
-    @extend %font-display;
-    font-size: 1.25rem;
-    letter-spacing: 0.06em;
-    line-height: 1;
   }
 
   &:focus-visible {

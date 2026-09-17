@@ -51,7 +51,7 @@ $term = get_queried_object();
       'cta_url' => 'contact-us/',
       'section_class' => 'light-section',
       'section_title' => 'We truly care for our partners',
-      'cta_text' => 'Let\'s have a chat',
+      'cta_text' => 'Let’s have a chat',
     ]);
   ?>
 

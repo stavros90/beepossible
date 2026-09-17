@@ -3,7 +3,7 @@
 <main class="career-page">
 
   <section class="page-intro container light-section">
-    <h1 class="page-title">Grow With Us</div>
+    <h1 class="page-title">Grow With Us</h1>
     <p class="page-desc long">At BeePossible, we’re always on the lookout for passionate, creative, and driven individuals to join our growing team. Whether you’re a designer, strategist, developer, or marketer, we believe in building a collaborative environment where bold ideas thrive and innovation leads the way. Explore our current openings or send us your CV — because great talent doesn’t always wait for a job listing. Let’s build the future together.</p>
   </section>
 
@@ -26,7 +26,7 @@
 
     <?php endwhile; ?>
     </ul>
-    <?php else : echo '<p style="margin-bottom:3rem;font-size:1.3rem;">We don’t have any open positions at the moment. Please check back soon for future opportunities..</p>'; ?>
+    <?php else : echo '<p style="margin-bottom:3rem;font-size:1.3rem;">We don’t have any open positions at the moment. Please check back soon for future opportunities.</p>'; ?>
   
     <?php endif; wp_reset_postdata(); ?>
   </section>

@@ -1,6 +1,6 @@
 <section class="trusted-by dark-section">
   <div class="container">
-    <div class="decor-title" data-aos="fade-left" data-aos-duration="300">Trusted By 350+ Companies</div>
+    <div class="decor-title" data-aos="fade-left" data-aos-duration="300">Trusted by 350+ Companies</div>
   </div>
   <div class="container-fluid">
 

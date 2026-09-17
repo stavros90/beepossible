@@ -34,7 +34,7 @@
     </div>
 
     <div class="solution" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
-      <h2 class="solution-title">Brand Revitalization</h2>
+      <h2 class="solution-title">Brand Revitalisation</h2>
       <div class="solution-text">
         <p>
         When your brand no longer feels like you, it’s time to re-align.<br><br>We update visuals, messaging, and strategy to reflect where you’re going—not just where you’ve been.
@@ -87,7 +87,7 @@
       <h2 class="solution-title">360 Business Strategy</h2>
       <div class="solution-text">
         <p>
-        Growth needs a plan—and a partner.<br><br>We work with you to align vision with operations, optimize performance, and uncover opportunities for long-term success.
+        Growth needs a plan—and a partner.<br><br>We work with you to align vision with operations, optimise performance, and uncover opportunities for long-term success.
         </p>
         <a href="<?php echo esc_url(site_url('start-a-project/')); ?>" role="button" class="cta cta-secondary" name="Let's launch something powerful">Let’s map your next chapter.</a>
       </div>
@@ -97,7 +97,7 @@
       <h2 class="solution-title">UI/UX Strategy & Design</h2>
       <div class="solution-text">
         <p>
-        Growth needs a plan—and a partner.<br><br>We work with you to align vision with operations, optimize performance, and uncover opportunities for long-term success.
+        Growth needs a plan—and a partner.<br><br>We work with you to align vision with operations, optimise performance, and uncover opportunities for long-term success.
         </p>
         <a href="<?php echo esc_url(site_url('start-a-project/')); ?>" role="button" class="cta cta-secondary" name="Let's launch something powerful">Let’s design your next chapter.</a>
       </div>

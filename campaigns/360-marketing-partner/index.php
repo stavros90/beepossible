@@ -71,7 +71,7 @@ $case_studies = [
 	[
 		'client'  => 'Dior Cyprus',
 		'service' => 'Event production',
-		// 'image'   => 'assets/images/campaigns/case-dior.webp',
+		'image'   => 'assets/images/campaigns/case-dior.webp',
 		'tagline' => 'A fragrance launch executed to Dior’s global standard.',
 		'text'    => 'Full production of the Dior Paradise launch at La Collection Privée, Mall of Cyprus. Creative direction, VIP guest management, full supplier roster, and on-site execution from concept to close.',
 		'quote'   => 'The Bee Possible team executed every aspect of the event to the highest standard, while ensuring everything remained perfectly aligned with our brand principles and guidelines.',
@@ -80,21 +80,21 @@ $case_studies = [
 	[
 		'client'  => 'Patrizia Pepe Cyprus',
 		'service' => 'Social media and performance advertising',
-		// 'image'   => 'assets/images/campaigns/case-patrizia-pepe.webp',
+		'image'   => 'assets/images/campaigns/case-patrizia-pepe.webp',
 		'result'  => '+171% Instagram growth',
 		'text'    => 'Full social media management and paid advertising for the luxury Italian fashion brand in Cyprus. Content strategy, creative production, and performance campaigns running continuously.',
 	],
 	[
 		'client'  => 'CP Herbalist',
 		'service' => 'Full digital marketing',
-		// 'image'   => 'assets/images/campaigns/case-cp-herbalist.webp',
+		'image'   => 'assets/images/campaigns/case-cp-herbalist.webp',
 		'result'  => 'Sales doubled year-on-year',
 		'text'    => 'Strategy, Meta advertising, email marketing, and social media management for one of the leading skincare e-commerce brands in Cyprus.',
 	],
 	[
 		'client'  => 'XM',
 		'service' => 'Creative production and social video',
-		// 'image'   => 'assets/images/campaigns/case-xm.webp',
+		'image'   => 'assets/images/campaigns/case-xm.webp',
 		'tagline' => 'Turning complex messaging into scroll-stopping content.',
 		'text'    => 'Two social launch videos for the global broker: one for their presence at Devoxx Poland, one announcing their cybersecurity course. Concept, scriptwriting, motion direction and social optimisation, built to work on muted autoplay.',
 	],
@@ -154,7 +154,7 @@ bp_campaign_header();
 	bp_campaign_part( 'hero', [
 		'eyebrow'  => 'Full-service marketing partner',
 		'title'    => 'A full-service marketing agency for brands that <em>take growth seriously</em>.',
-		'sub'      => 'Strategy, creatives, digital marketing, events, and web development. All under one roof, working toward one goal.',
+		'sub'      => 'Strategy, creatives, digital marketing, events, and web development. All under one roof, working towards one goal.',
 		'cta_text' => 'Let’s talk',
 		'visual'   => $hero_image
 			? bp_campaign_part( 'devices', [
@@ -167,12 +167,12 @@ bp_campaign_header();
 
 	/* ---------- 2. SERVICES ----------
 	   'pillar' rather than 'rule': the rule variant marks each card with a
-	   yellow accent line, which reads as five separate arguments when the point
-	   is that the five services are one offer.
+	   yellow accent line, which reads as separate arguments when the point is
+	   that the services are one offer.
 
-	   The page stylesheet turns these into panels and lays five of them out as
-	   three-then-two — auto-fit alone resolves to four across and strands the
-	   fifth. Both hang off the --services class. */
+	   Six cards, so the grid is a plain three across, two rows. "& more" closes
+	   the list rather than pretending the five above it are exhaustive. The page
+	   stylesheet turns them into panels off the --services class. */
 	bp_campaign_part( 'cards', [
 		'bg'      => 'white',
 		'class'   => 'campaign-cards--services',
@@ -198,6 +198,10 @@ bp_campaign_header();
 			[
 				'title' => 'Web development',
 				'text'  => 'Custom and template website builds. Fast, clean, and optimised for search from day one.',
+			],
+			[
+				'title' => '&amp; more',
+				'text'  => 'Brand identity, packaging and labels, signage, print and large format, merchandise. If it carries your brand, we produce it — ask us.',
 			],
 		],
 	] );

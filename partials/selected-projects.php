@@ -15,14 +15,14 @@
   // Set defaults
   $section_class = isset($section_class) ? esc_attr($section_class) : '';
   $section_title = isset($section_title) ? esc_html($section_title) : "Selected";
-  $secion_subtitle = isset($section_subtitle) ? esc_html($section_subtitle) : "Projects";
+  $section_subtitle = isset($section_subtitle) ? esc_html($section_subtitle) : "Projects";
   $orderby = isset($orderby) ? esc_html($orderby) : "rand";
   $show_more = isset($show_more) ? esc_html($show_more) : "false";
 
 ?>
 
 <section class="selected-projects <?php echo $section_class; ?>">
-  <h3 class="font-display"><?php echo $section_title; ?> <span data-aos="zoom-out-down"><?php echo $secion_subtitle; ?></span></h3>
+  <h3 class="font-display"><?php echo $section_title; ?> <span data-aos="zoom-out-down"><?php echo $section_subtitle; ?></span></h3>
   
   <div class="container-fluid">
     <div class="section-project-grid">
@@ -37,7 +37,7 @@
 
       <project class="project-card" data-aos="flip-left" data-aos-duration="1000">
         <a href="<?php the_permalink(); ?>">
-          <?php the_post_thumbnail( 'case-study-list', ["class" => "project-card__image"]); ?>      
+          <?php bp_case_study_cover( 'case-study-list', ["class" => "project-card__image"]); ?>
         </a>
         <h4 class="project-card__title" data-aos="fade-up" data-aos-delay="50"><?php the_title(); ?></h4>
         <?php if(get_field('measurable_impact')) : ?>

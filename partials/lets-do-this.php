@@ -14,7 +14,7 @@
 
   // Set defaults
   $section_class = isset($section_class) ? esc_attr($section_class) : 'lets-do-this__black';
-  $section_title = isset($section_title) ? esc_html($section_title) : "Let's do great things, together.";
+  $section_title = isset($section_title) ? esc_html($section_title) : "Let’s do great things, together.";
   $cta_text = isset($cta_text) ? esc_html($cta_text) : 'Give us a call';
   $cta_url = isset($cta_url) ? $cta_url : 'start-a-project/'; 
 ?>

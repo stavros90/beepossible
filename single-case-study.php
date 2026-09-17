@@ -61,15 +61,15 @@
       <div class="project-desc"><?php echo $projectDesc; ?></div>
 
       <?php if($projectRequests) : ?>
-        <h3 class="case-study-title">What did our client Requested</h3>
+        <h3 class="case-study-title">What our client requested</h3>
         <div class="project-desc"><?php echo $projectRequests; ?></div>
       <?php endif; ?>
 
-      <h3 class="case-study-title">What we Delivered</h3>
+      <h3 class="case-study-title">What we delivered</h3>
       <div class="project-desc"><?php echo $delivered; ?></div>
 
       <?php if($customerReview) : ?>
-        <h3 class="case-study-title">In the client's words</h3>
+        <h3 class="case-study-title">In the client’s words</h3>
         <blockquote class="customer-review" data-aos="fade-up">
           <?php echo wpautop( wp_kses_post( $customerReview ) ); ?>
         </blockquote>

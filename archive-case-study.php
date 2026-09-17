@@ -3,7 +3,7 @@
 <main class="page-projects">
 
   <section class="page-intro container light-section">
-    <h1 class="page-title">Turning Business into Brands.</h1>
+    <h1 class="page-title">Turning Businesses into Brands.</h1>
     <p class="page-desc">
       Real work. Real results.
     </p>
@@ -66,7 +66,7 @@
       'cta_url' => 'contact-us/',
       'section_class' => 'light-section',
       'section_title' => 'We truly care for our partners',
-      'cta_text' => 'Let\'s have a chat',
+      'cta_text' => 'Let’s have a chat',
     ]);
   ?>
 

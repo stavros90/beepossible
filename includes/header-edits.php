@@ -38,7 +38,7 @@ add_action('wp_head', function () {
             "@id": "https://beepossible.com/#marketing-agency",
             "name": "Bee Possible Ltd",
             "url": "https://beepossible.com",
-            "description": "Bee Possible is a results-driven marketing agency in Cyprus offering digital marketing, social media management, Custom Website Development, UI/UX, and branding .",
+            "description": "Bee Possible is a results-driven marketing agency in Cyprus offering digital marketing, social media management, custom website development, UI/UX, and branding.",
             "areaServed": {
                 "@type": "Country",
                 "name": "Cyprus"
@@ -71,7 +71,7 @@ add_action('wp_head', function () {
             "name": "What is the best marketing agency in Cyprus?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "The best marketing agency in Cyprus depends on your goals, but Bee Possible is known for delivering measurable results in digital marketing, Brand Strategy, and social media management."
+                "text": "The best marketing agency in Cyprus depends on your goals, but Bee Possible is known for delivering measurable results in digital marketing, brand strategy, and social media management."
             }
             },
             {
@@ -79,12 +79,12 @@ add_action('wp_head', function () {
             "name": "How much does digital marketing cost in Cyprus?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Digital marketing services in Cyprus typically range from €500 to €3000+ per month depending on the scope, including Designs, paid ads, and content creation."
+                "text": "Digital marketing services in Cyprus typically range from €500 to €3000+ per month depending on the scope, including design, paid ads, and content creation."
             }
             },
             {
             "@type": "Question",
-            "name": "Do I need Website for my business in Cyprus?",
+            "name": "Do I need a website for my business in Cyprus?",
             "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, having an official website is essential for businesses in Cyprus to appear on Google when customers search for their services."
@@ -95,7 +95,7 @@ add_action('wp_head', function () {
             "name": "What services does a marketing agency in Cyprus offer?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Marketing agencies in Cyprus offer services such as SEO, Google Ads, social media marketing, branding, content creation, and website optimization."
+                "text": "Marketing agencies in Cyprus offer services such as SEO, Google Ads, social media marketing, branding, content creation, and website optimisation."
             }
             },
             {
@@ -103,7 +103,7 @@ add_action('wp_head', function () {
             "name": "How long does it take to see results from SEO in Cyprus?",
             "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "SEO results in Cyprus usually take between 3 to 6 months depending on competition, website quality, and consistency of optimization."
+                "text": "SEO results in Cyprus usually take between 3 to 6 months depending on competition, website quality, and consistency of optimisation."
             }
             }
         ]

@@ -25,10 +25,6 @@ if ( ! defined( 'BP_CAMPAIGN_PATH' ) ) {
 /**
  * WhatsApp business number, digits only, international format, no + or spaces.
  *
- * TODO (before launch): confirm the real WhatsApp business number. The number in
- * footer.php (+357 22 388858) and the one in page-contact-us.php
- * (+357 22 041145) are both landlines and differ from each other.
- *
  * Until that number is confirmed, campaigns turn WhatsApp off with
  * 'whatsapp' => false in bp_campaign_register(). See bp_campaign_whatsapp_enabled().
  */

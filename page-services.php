@@ -66,7 +66,7 @@
           <li>Pop-Up</li>
           <li>Launch events</li>
           <li>Corporate events</li>
-          <li>Clients events</li>
+          <li>Client events</li>
         </ul>
       </div>
     </div>
@@ -75,12 +75,12 @@
       <h2 class="service-title">Web Development</h2>
       <div class="service-text">
         <p>
-          Our web development services turn ideas into high-performing digital experiences. We don’t rely on bloated templates or shortcuts—we build custom WordPress themes with clean, semantic code that’s fast, optimized, and built to scale. Every site we create is designed to load quickly, rank better, and deliver a smooth experience that keeps people engaged. We make sure the foundation is solid so your business can grow without limits.
+          Our web development services turn ideas into high-performing digital experiences. We don’t rely on bloated templates or shortcuts—we build custom WordPress themes with clean, semantic code that’s fast, optimised, and built to scale. Every site we create is designed to load quickly, rank better, and deliver a smooth experience that keeps people engaged. We make sure the foundation is solid so your business can grow without limits.
         </p>
         <ul>
           <li>Custom WordPress</li>
           <li>Semantic Code</li>
-          <li>Fast &amp; Optimized</li>
+          <li>Fast &amp; Optimised</li>
           <li>Scalable</li>
         </ul>
       </div>

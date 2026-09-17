@@ -55,7 +55,7 @@ $showcase = [
 	[
 		'image'  => 'assets/images/campaigns/details-made-with-love.webp',
 		'title'  => 'Details Made with Love',
-		'sector' => 'Flowers & home décor eshop',
+		'sector' => 'Flowers & home décor online shop',
 	],
 	[
 		'image'  => 'assets/images/campaigns/mylonas-auto-parts.webp',
@@ -81,15 +81,15 @@ $showcase = [
 $faqs = [
 	[
 		'q' => 'How much does a website cost?',
-		'a' => "Every project is different. The price depends on the scope, the number of pages, and the features you need. We don't do fixed packages because we don't build generic websites. Tell us about your project and we'll give you an honest, specific quote.",
+		'a' => "Every project is different. The price depends on the scope, the number of pages, and the features you need. We don’t do fixed packages because we don’t build generic websites. Tell us about your project and we’ll give you an honest, specific quote.",
 	],
 	[
 		'q' => 'How long does a project take?',
-		'a' => "It depends on scope and complexity. A focused site moves faster than a full custom eshop. We'll give you a clear timeline at the proposal stage and we stick to it.",
+		'a' => "It depends on scope and complexity. A focused site moves faster than a full custom online shop. We’ll give you a clear timeline at the proposal stage and we stick to it.",
 	],
 	[
 		'q' => 'I already have a website. Can you improve it, or does it need to be rebuilt?',
-		'a' => "Both are possible. We look at what you have and tell you honestly whether it's worth improving or better to start fresh. We won't push you toward the more expensive option, just the right one.",
+		'a' => "Both are possible. We look at what you have and tell you honestly whether it’s worth improving or better to start fresh. We won’t push you towards the more expensive option, just the right one.",
 	],
 	[
 		'q' => 'Do you only work with businesses in Nicosia?',
@@ -97,11 +97,11 @@ $faqs = [
 	],
 	[
 		'q' => 'Will I be able to manage the site myself after it is built?',
-		'a' => "Yes. We build on WordPress, one of the most widely used platforms in the world. We'll walk you through how to use it, and we're available if you need support.",
+		'a' => "Yes. We build on WordPress, one of the most widely used platforms in the world. We’ll walk you through how to use it, and we’re available if you need support.",
 	],
 	[
-		'q' => "What if I don't know exactly what I need yet?",
-		'a' => "That's exactly what the first call is for. Come with your business problem and we'll figure out what the website should do together.",
+		'q' => "What if I don’t know exactly what I need yet?",
+		'a' => "That’s exactly what the first call is for. Come with your business problem and we’ll figure out what the website should do together.",
 	],
 ];
 
@@ -183,19 +183,19 @@ bp_campaign_header();
 		'variant' => 'rule',
 		'cards'   => [
 			[
-				'title' => "It looks fine. But it's not converting.",
-				'text'  => 'Visitors land, form an opinion in 3 seconds, and leave. You never see it happen. You just wonder why the phone isn\'t ringing.',
+				'title' => "It looks fine. But it’s not converting.",
+				'text'  => 'Visitors land, form an opinion in 3 seconds, and leave. You never see it happen. You just wonder why the phone isn’t ringing.',
 			],
 			[
 				'title' => 'It was built years ago. Nothing has changed since.',
-				'text'  => "Slow to load. Not optimised for mobile. Google barely registers it. The web has moved on and the website hasn't.",
+				'text'  => "Slow to load. Not optimised for mobile. Google barely registers it. The web has moved on and the website hasn’t.",
 			],
 			[
 				'title' => 'It was built to exist, not to perform.',
-				'text'  => "A website that just sits there isn't a neutral asset. Every day it isn't driving your business forward, it's working against you.",
+				'text'  => "A website that just sits there isn’t a neutral asset. Every day it isn’t driving your business forward, it’s working against you.",
 			],
 		],
-		'outro'   => "If any of that sounds familiar, you're in the right place.",
+		'outro'   => "If any of that sounds familiar, you’re in the right place.",
 	] );
 
 
@@ -206,7 +206,7 @@ bp_campaign_header();
 		'heading' => 'A website that does something for your business.',
 		'intro'   => [
 			'We build websites around your goals, your audience, and the single action you most want visitors to take.',
-			'Whether that\'s a fully custom build from scratch or a high-performance template enhanced and made uniquely yours, we start with what your business actually needs.',
+			'Whether that’s a fully custom build from scratch or a high-performance template enhanced and made uniquely yours, we start with what your business actually needs.',
 			[ 'text' => 'Fast. Clean. Optimised for search. Built to grow with you.', 'lead' => true ],
 		],
 		'variant' => 'pillar',
@@ -262,7 +262,7 @@ bp_campaign_header();
 			],
 			[
 				'title' => 'Proposal and design direction',
-				'text'  => "We come back with a clear plan, structure, and timeline. You know exactly what you're getting before anything is built.",
+				'text'  => "We come back with a clear plan, structure, and timeline. You know exactly what you’re getting before anything is built.",
 			],
 			[
 				'title' => 'Build and review',
@@ -291,7 +291,7 @@ bp_campaign_header();
 	/* ---------- 9. FINAL CTA ---------- */
 	bp_campaign_part( 'enquire', [
 		'heading' => 'Ready to have a website that works for you?',
-		'sub'     => "Tell us about your business. We'll come back with an honest, specific answer.",
+		'sub'     => "Tell us about your business. We’ll come back with an honest, specific answer.",
 		// 'whatsapp' => 'Hi Bee Possible, I saw your website page and I would like a quote.',
 		'form'     => [
 			'form_id'             => 'campaignEnquiry',

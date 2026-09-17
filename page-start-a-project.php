@@ -3,8 +3,8 @@
 <main class="page-start-a-project">
 
   <section class="page-intro container">
-    <h1 class="page-title">Let's Make Your Next Move Count</div>
-    <p class="page-desc long">Whether you're launching something new or evolving what exists, we're here to help you grow with clarity, strategy, and purpose.</p>
+    <h1 class="page-title">Let’s Make Your Next Move Count</h1>
+    <p class="page-desc long">Whether you’re launching something new or evolving what exists, we’re here to help you grow with clarity, strategy, and purpose.</p>
   </section>
 
   <section class="container contact-container">
@@ -16,11 +16,11 @@
         <label class="screen-readers-only" for="EMAIL">Email</label>
         <input type="email" id="EMAIL" name="EMAIL" placeholder="Email" required>
 
-        <label class="screen-readers-only" for="PHONE">Phome number</label>
+        <label class="screen-readers-only" for="PHONE">Phone number</label>
         <input type="tel" id="PHONE" name="PHONE" placeholder="Phone number" required>
 
         <label class="screen-readers-only" for="COMPANY">Company / Brand Name (optional)</label>
-        <input type="text" id="COMPANY" name="PHONE" placeholder="Company / Brand Name (optional)">
+        <input type="text" id="COMPANY" name="COMPANY" placeholder="Company / Brand Name (optional)">
 
         <label for="STAGE">What stage are you in?</label>
         <select name="STAGE" id="STAGE">
@@ -31,7 +31,7 @@
           <option value="Not sure yet">Not sure yet</option>
         </select>
 
-        <label for="INTERESTED">What are you interested in? (Select all that apply - Hold CTRL)</label>
+        <label for="INTERESTED">What are you interested in? (Select all that apply — hold CTRL)</label>
         <select name="INTERESTED[]" id="INTERESTED" multiple style="min-height:165px;overflow-y:hidden;">
           <option value="Strategy">Strategy</option>
           <option value="Branding">Branding</option>
@@ -63,7 +63,7 @@
         
         <input type="submit" value="Start the Conversation" class="cta cta-primary">
 
-        <p>We review every inquiry carefully. Someone from our team will be in touch within 2–3 business days.</p>
+        <p>We review every enquiry carefully. Someone from our team will be in touch within 2–3 business days.</p>
       </form>
     </div>
   </section>
