@@ -1,3 +1,11 @@
+@use './typography' as *;
+
+// Page: Contact us
+//
+// Two columns, as this page always had. The routing cards take the column the
+// form used to sit in; the contact details and map keep theirs.
+// See page-contact-us.php for why the form became a set of routes.
+
 .page-contact {
   background:var(--white-smoke);
   padding-bottom:4rem;
@@ -5,27 +13,217 @@
 
 .contact-container {
   display:flex;
-  flex-direction: column;
+  flex-direction:column;
   gap:3rem;
 
   @media screen and (min-width:768px) {
-    flex-direction: row;
-    gap:5rem;
+    flex-direction:row;
+    align-items:flex-start;
 
-    .contact__form, .contact__details{
+    // A tighter gap than the 5rem the form column used: the cards are wide
+    // rows now, and every rem of gap comes straight off their width.
+    gap:3rem;
+
+    // Weighted towards the routes. They are the job of the page; the details
+    // are for the people the four routes do not cover.
+    .contact__routes {
+      width:56%;
+    }
+
+    .contact__details {
+      width:44%;
+    }
+
+    // Not this page. page-start-a-project.php reuses .contact-container with a
+    // single .contact__form child and no second column, and has done since
+    // before the contact form became a set of routes. Without this the form
+    // sizes to its content in the flex row and the page changes shape.
+    .contact__form {
       width:50%;
-      margin-bottom:2rem;
-
-      a {
-        text-decoration: none;
-        color:var(--carbon);
-        &:hover {
-          text-decoration: underline;
-        }
-      }
     }
   }
-  
+}
+
+
+// Section: the routing cards
+.contact-routes {
+
+  &__list {
+    display:flex;
+    flex-direction:column;
+    gap:0.875rem;
+    margin:0;
+    padding:0;
+    list-style:none;
+  }
+
+  // The intents a card does not cover. Deliberately plain: it is a fallback,
+  // and it should not compete with the four routes above it.
+  &__catch {
+    @extend %font-geologica;
+    font-weight:300;
+    margin:1.75rem 0 0;
+    font-size:0.9375rem;
+    line-height:1.6;
+    color:var(--gray2);
+
+    a {
+      color:var(--carbon);
+      text-underline-offset:0.2em;
+    }
+  }
+}
+
+
+// The card.
+//
+// A wide, short row rather than a tile: four of them stack against the map
+// without overrunning it, and the arrow sits on the same line as the copy
+// instead of adding another band of height underneath it.
+//
+// The whole card is the link rather than a button inside it: it makes the tap
+// target the full row on a phone, and gives one focus stop per route instead
+// of a card you can focus but not follow.
+.route-card {
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:1rem;
+  padding:1.125rem 1.25rem;
+  border-radius:1rem;
+  border:1px solid rgba(19, 19, 19, 0.09);
+  background:#fff;
+  color:var(--carbon);
+  text-decoration:none;
+  overflow:hidden;
+  transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+
+  @media screen and (min-width:768px) {
+    gap:1.25rem;
+    padding:2rem 1.5rem;
+  }
+
+  // A yellow rule that draws itself along the bottom edge on hover. Cheaper
+  // than animating the border colour, and it reads as direction, which is
+  // what the card is for.
+  &::after {
+    content:"";
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:3px;
+    background:var(--primary);
+    transform:scaleX(0);
+    transform-origin:left;
+    transition:transform .3s ease;
+  }
+
+  &:hover,
+  &:focus-visible {
+    transform:translateY(-3px);
+    border-color:rgba(19, 19, 19, 0.16);
+    box-shadow:0 14px 32px -20px rgba(0, 0, 0, 0.45);
+
+    &::after {
+      transform:scaleX(1);
+    }
+
+    .route-card__go {
+      background:var(--primary);
+      border-color:var(--primary);
+      transform:translateX(3px);
+    }
+  }
+
+  &:focus-visible {
+    outline:2px solid var(--primary);
+    outline-offset:3px;
+  }
+
+  // min-width:0 so a long question wraps instead of forcing the row wider
+  // than its column.
+  &__body {
+    flex:1 1 auto;
+    min-width:0;
+  }
+
+  // Echoes .decor-title, the accent label used elsewhere on the site.
+  &__tag {
+    display:block;
+    color:var(--primary);
+    font-size:0.8125rem;
+    line-height:1;
+    font-weight:400;
+    margin-bottom:0.5rem;
+  }
+
+  &__question {
+    @extend %font-primary;
+    font-weight:700;
+    font-size:1.0625rem;
+    line-height:1.3;
+    margin:0 0 0.25rem;
+
+    @media screen and (min-width:1024px) {
+      font-size:1.1875rem;
+    }
+  }
+
+  &__text {
+    @extend %font-geologica;
+    font-weight:300;
+    font-size:0.875rem;
+    line-height:1.5;
+    color:var(--gray2);
+    margin:0;
+  }
+
+  &__go {
+    flex:none;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    width:2.5rem;
+    height:2.5rem;
+    border-radius:50%;
+    border:1px solid rgba(19, 19, 19, 0.15);
+    transition:background-color .25s ease, border-color .25s ease, transform .25s ease;
+
+    svg {
+      width:1.0625rem;
+      height:1.0625rem;
+    }
+  }
+}
+
+
+// Column: contact details and map
+.contact__details {
+
+  h2 {
+    @extend %font-primary;
+    font-weight:700;
+    font-size:1.25rem;
+    margin-bottom:0.35rem;
+  }
+
+  p,
+  address {
+    @extend %font-geologica;
+    font-weight:300;
+    font-style:normal;
+    margin:0 0 1.75rem;
+  }
+
+  a {
+    color:var(--carbon);
+    text-decoration:none;
+
+    &:hover {
+      text-decoration:underline;
+    }
+  }
 }
 
 address a {
@@ -37,11 +235,10 @@ address a {
 }
 
 .contact-map {
-  margin-top:2rem;
+  margin-top:0.5rem;
   width: 100%;
   max-width:100%;
-  height:auto;
-  min-height:500px;
+  min-height:360px;
   border-radius:1.5rem;
   display:none;
 

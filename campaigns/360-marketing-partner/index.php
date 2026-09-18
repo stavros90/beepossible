@@ -23,7 +23,7 @@
  * form separates leads by campaign without a second endpoint to configure,
  * pay for and keep in sync.
  */
-$endpoint = 'https://formcarry.com/s/YJ-I2UYHqSD';
+$endpoint = 'https://formcarry.com/s/msoDaOsiOTb';
 
 /**
  * The hero collage. Empty until the artwork exists.
