@@ -33,6 +33,34 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 2rem;
     }
+
+    /* Below the two-column breakpoint the grid stacks, and four cards carrying
+       an image each becomes a very long scroll on the screen that can least
+       afford it. A snap row turns that into one swipe per card.
+
+       No JS involved: the drag is the browser's own scrolling and scroll-snap
+       does the settling. */
+    @media screen and (max-width: 767px) {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+
+      /* Pulled out to the screen edges so cards travel edge to edge, with the
+         gutter restored as padding — and as scroll-padding, or a snapped card
+         would land flush against the edge with no margin. */
+      margin-inline: calc(var(--c-gutter) * -1);
+      padding-inline: var(--c-gutter);
+      scroll-padding-inline: var(--c-gutter);
+
+      /* The half-visible next card is what says "there is more"; a scrollbar
+         under it is just noise. */
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 
   &__item {
@@ -42,6 +70,13 @@
     border: 1px solid var(--c-line);
     border-radius: var(--c-radius);
     background: var(--c-white);
+
+    /* Capped as well as proportional: 85% alone would make a card 650px wide on
+       a large phone in landscape. The uncovered sliver is the affordance. */
+    @media screen and (max-width: 767px) {
+      flex: 0 0 min(85%, 22rem);
+      scroll-snap-align: start;
+    }
   }
 
   /* Reserved space, not a generated composite. Empty it shows an outlined box

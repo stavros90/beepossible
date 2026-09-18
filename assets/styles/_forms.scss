@@ -59,27 +59,85 @@ form#contactUs, form#careersForm, form#startHere {
     }
   }
 
-  .timeline-options {
+  /* Pill-style choice groups: radios (single) and checkboxes (multiple) */
+  .choice-pills {
     display: flex;
-    gap: 1rem;
-    margin-bottom:2rem;
-  }
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+    border: none;
+    padding: 0;
+    min-width: 0;
 
-  .timeline-options input[type="radio"] {
-    display: none;
-  }
+    legend {
+      width: 100%;
+      margin-bottom: 0.75rem;
+      padding: 0;
+      font-size: 1rem;
+      font-weight: 600;
+    }
 
-  .timeline-options label {
-    padding: 0.5rem 1rem;
-    border: 2px solid #ccc;
-    border-radius: 6px;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
+    &__hint {
+      font-weight: 400;
+      color: var(--gray2);
+    }
 
-  .timeline-options input[type="radio"]:checked + label {
-    background: white;
-    color: var(--carbon);
-    border-color: var(--primary);
+    input[type="radio"],
+    input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 1px;
+      height: 1px;
+      margin: 0;
+      pointer-events: none;
+    }
+
+    label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.5rem 1rem;
+      border: 2px solid var(--gray3);
+      border-radius: 3.75rem;
+      color: var(--gray1);
+      cursor: pointer;
+      user-select: none;
+      transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+
+      &:hover {
+        border-color: var(--gray2);
+      }
+    }
+
+    input:checked + label {
+      background: white;
+      color: var(--carbon);
+      border-color: var(--primary);
+    }
+
+    /* Checkmark that appears on selected pills (radios and checkboxes); collapsed when unchecked */
+    input + label::before {
+      content: "";
+      flex: none;
+      width: 0;
+      height: 0.75rem;
+      margin: -0.2rem -0.4rem 0 0;
+      border: solid var(--primary);
+      border-width: 0 2px 2px 0;
+      opacity: 0;
+      transform: rotate(45deg);
+      transition: width 0.15s ease, margin 0.15s ease, opacity 0.15s ease;
+    }
+
+    input:checked + label::before {
+      width: 0.45rem;
+      margin-right: 0;
+      opacity: 1;
+    }
+
+    input:focus-visible + label {
+      outline: 2px solid var(--primary);
+      outline-offset: 2px;
+    }
   }
 }

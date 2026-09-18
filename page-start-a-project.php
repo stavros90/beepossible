@@ -31,23 +31,32 @@
           <option value="Not sure yet">Not sure yet</option>
         </select>
 
-        <label for="INTERESTED">What are you interested in? (Select all that apply — hold CTRL)</label>
-        <select name="INTERESTED[]" id="INTERESTED" multiple style="min-height:165px;overflow-y:hidden;">
-          <option value="Strategy">Strategy</option>
-          <option value="Branding">Branding</option>
-          <option value="Campaign/Comms">Campaign/Comms</option>
-          <option value="Website / Digital">Website / Digital</option>
-          <option value="E-Commerce">E-Commerce</option>
-          <option value="UI/UX">UI/UX</option>
-          <option value="Something Else">Something Else</option>
-        </select>
+        <fieldset class="choice-pills" id="INTERESTED">
+          <legend>What are you interested in? <span class="choice-pills__hint">Select all that apply</span></legend>
+          <?php
+            $interests = [
+              'Strategy',
+              'Branding',
+              'Campaign/Comms',
+              'Website / Digital',
+              'E-Commerce',
+              'UI/UX',
+              'Something Else',
+            ];
+            foreach ( $interests as $i => $interest ) :
+              $id = 'interested-' . $i;
+          ?>
+            <input type="checkbox" id="<?php echo esc_attr( $id ); ?>" name="INTERESTED[]" value="<?php echo esc_attr( $interest ); ?>">
+            <label for="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $interest ); ?></label>
+          <?php endforeach; ?>
+        </fieldset>
 
         <label class="screen-readers-only" for="MESSAGE">Tell us more:</label>
         <textarea rows="4" id="MESSAGE" name="MESSAGE" placeholder="Tell us more:" required></textarea>
 
 
-        <label for="TIMELINE">Timeline</label>
-        <div class="timeline-options">
+        <fieldset class="choice-pills timeline-options">
+          <legend>Timeline</legend>
           <input type="radio" id="timeline-asap" name="TIMELINE" value="asap" required>
           <label for="timeline-asap">ASAP</label>
 
@@ -56,7 +65,11 @@
 
           <input type="radio" id="timeline-3" name="TIMELINE" value="3+ months">
           <label for="timeline-3">3+ months</label>
-        </div>
+        </fieldset>
+
+        <?php /* Same convention as the campaign forms: SOURCE tells Formcarry which form the lead came from, PAGE the exact URL. */ ?>
+        <input type="hidden" name="SOURCE" value="start-a-project">
+        <input type="hidden" name="PAGE" value="<?php echo esc_url( home_url( add_query_arg( [] ) ) ); ?>">
 
         <div class="h-captcha" data-sitekey="68e83946-efae-4068-a37c-3a44401a1bfa"></div>
         <script src="https://js.hcaptcha.com/1/api.js" async defer></script>

@@ -19,6 +19,29 @@
     @media screen and (min-width: 900px) {
       grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
     }
+
+    /* Below that the reviews stack, which on a phone is three full screens of
+       scrolling between the proof and the enquiry form. A snap row makes it one
+       swipe per review instead. Same treatment as the case study cards, and no
+       JS for the same reason: the drag is native scrolling. */
+    @media screen and (max-width: 899px) {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+
+      /* Out to the screen edges, gutter restored as padding — and as
+         scroll-padding, so a snapped review is not flush against the edge. */
+      margin-inline: calc(var(--c-gutter) * -1);
+      padding-inline: var(--c-gutter);
+      scroll-padding-inline: var(--c-gutter);
+
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
 
   /* Quotes start at a common top edge and the names are pushed to a common
@@ -31,6 +54,11 @@
     padding: clamp(1.75rem, 4vw, 2.5rem);
     border-radius: var(--c-radius);
     background: var(--c-paper);
+
+    @media screen and (max-width: 899px) {
+      flex: 0 0 min(85%, 22rem);
+      scroll-snap-align: start;
+    }
 
     blockquote {
       @extend %font-primary;

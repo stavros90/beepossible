@@ -61,11 +61,14 @@ $hero_image = '';
  * Export at 1200 × 800. A path pointing at a file that isn't there falls back
  * to the empty box rather than rendering broken.
  *
- * Card 4 replaces the brief's "TBD (Performance Marketing)" slot. Nothing on
- * the site carries a performance number — measurable_impact is empty on all
- * seven case studies — so XM is here on the strength of the work rather than a
- * figure, with its own tagline from the case study in place of a result. Swap
- * it when the performance client is confirmed.
+ * Decathlon is the brief's "TBD (Performance Marketing)" slot, finally filled:
+ * it is the one case study carrying hard paid-media numbers. Its card image is
+ * the only one still missing — case-decathlon.webp does not exist yet, so that
+ * card shows the outlined box until the file lands.
+ *
+ * XM has no figure attached and leads on a tagline instead. Use 'result' where
+ * there is a number and 'tagline' where there isn't; work whose value is not a
+ * percentage still needs a headline.
  */
 $case_studies = [
 	[
@@ -78,11 +81,11 @@ $case_studies = [
 		'source'  => 'Dior Cyprus',
 	],
 	[
-		'client'  => 'Patrizia Pepe Cyprus',
-		'service' => 'Social media and performance advertising',
-		'image'   => 'assets/images/campaigns/case-patrizia-pepe.webp',
-		'result'  => '+171% Instagram growth',
-		'text'    => 'Full social media management and paid advertising for the luxury Italian fashion brand in Cyprus. Content strategy, creative production, and performance campaigns running continuously.',
+		'client'  => 'Decathlon Cyprus',
+		'service' => 'Performance marketing',
+		'image'   => 'assets/images/campaigns/case-decathlon.webp',
+		'result'  => '+93% purchases on 32% more budget',
+		'text'    => 'Paid media across Meta and Google. Spend scaled by roughly a third while efficiency improved rather than slipped: Meta ROAS from 10.34x to 14.69x, and Google at 49.53x with conversions up as spend fell 24%.',
 	],
 	[
 		'client'  => 'CP Herbalist',
@@ -288,6 +291,7 @@ bp_campaign_header();
 		// 'whatsapp' => 'Hi Bee Possible, I saw your 360 marketing page and would like to talk.',
 		'form'    => [
 			'form_id'             => 'campaignEnquiry',
+			'fields'              => 'project', // Same field set as /start-a-project/ (stage, interests, timeline).
 			'submit_label'        => 'Contact us',
 			'message_label'       => 'Tell us what you are working on',
 			'message_placeholder' => 'Where your brand is now, what you want to grow, and which services you have in mind.',

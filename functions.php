@@ -9,5 +9,6 @@ require_once get_template_directory() . '/includes/wp-cleanup.php';
 require_once get_template_directory() . '/includes/login-page.php';
 require_once get_template_directory() . '/includes/anti-spam.php';
 require_once get_template_directory() . '/includes/campaign.php';
+require_once get_template_directory() . '/includes/tracking.php';
 require_once get_template_directory() . '/includes/post-options.php';
 require_once get_template_directory() . '/includes/case-study-options.php';
